@@ -23,12 +23,14 @@
     },
     "requires": {
       "db": {
-        "kind": "hana"
+        "kind": "sql",
+        "credentials": {
+          "database": "my.db"
+        }
       }
     }
   },
   "sapux": [
-    "app/databasedesafio",
     "app/desafio_bridge"
   ]
 }
