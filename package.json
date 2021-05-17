@@ -1,29 +1,34 @@
 {
-    "name": "desafio_bridge",
-    "version": "1.0.0",
-    "description": "A simple CAP project.",
-    "repository": "<Add your repository here>",
-    "license": "UNLICENSED",
-    "private": true,
-    "dependencies": {
-        "@sap/cds": "^4",
-        "express": "^4",
-        "@sap/hana-client": "^2.6.61"
+  "name": "desafio_bridge",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@sap/cds": "^4",
+    "express": "^4",
+    "@sap/hana-client": "^2.6.61"
+  },
+  "devDependencies": {
+    "@sap/ux-specification": "^1.84.10",
+    "sqlite3": "^5.0.2"
+  },
+  "scripts": {
+    "start": "cds run"
+  },
+  "cds": {
+    "hana": {
+      "deploy-format": "hdbtable"
     },
-    "devDependencies": {
-        "sqlite3": "^5.0.2"
-    },
-    "scripts": {
-        "start": "cds run"
-    },
-    "cds": {
-        "hana": {
-            "deploy-format": "hdbtable"
-        },
-        "requires": {
-            "db": {
-                "kind": "hana"
-            }
-        }
+    "requires": {
+      "db": {
+        "kind": "hana"
+      }
     }
+  },
+  "sapux": [
+    "app/databasedesafio",
+    "app/desafio_bridge"
+  ]
 }
