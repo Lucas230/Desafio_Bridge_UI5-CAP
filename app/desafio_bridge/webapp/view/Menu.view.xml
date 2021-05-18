@@ -1,0 +1,19 @@
+<mvc:View 
+    controllerName="desafiobridge.desafiobridge.controller.Menu"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m">
+
+    <Page showHeader="true" title="Menu" titleAlignment="Center" >
+        <content>
+            <VBox width="100%">
+                <Image src="images/logo_final.png" width="100%" height="100%"/>
+                <List>
+                    <items>
+                        <StandardListItem title="Cadastro de Vagas" type="Active" press="onNavVagasCadastro"/>
+                    </items>
+                </List>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>

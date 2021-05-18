@@ -94,9 +94,27 @@
                     "target": [
                         "TargetView"
                     ]
+                },
+                {
+                    "name": "Menu",
+                    "pattern": "",
+                    "target": ["Menu"]
+                },
+                {
+                    "name": "VagasCadastro",
+                    "pattern": "VagasCadastro",
+                    "target": [ "Menu", "VagasCadastro"]
                 }
             ],
             "targets": {
+                "Menu": { 
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"viewId": "menu",
+                    "viewName": "Menu",
+                    "controlAggregation": "masterPages"
+                },
                 "TargetView": {
                     "viewType": "XML",
                     "transition": "slide",
