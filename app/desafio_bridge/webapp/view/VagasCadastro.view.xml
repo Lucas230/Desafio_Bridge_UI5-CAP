@@ -1,11 +1,12 @@
 <mvc:View
-    controllerName="desafiobridge.desafiobridge.controller.View"
-    xmlns:mvc="sap.ui.core.mvc"
-    displayBlock="true"
+    xmlns:core="sap.ui.core" 
+    controllerName="desafiobridge.desafiobridge.controller.VagasCadastro"
+    xmlns:form="sap.ui.layout.form" 
+    xmlns:mvc="sap.ui.core.mvc" 
+    displayBlock="true" 
     xmlns="sap.m"
 >
-	
-	<Page showHeader="true" title="Cadastro de Instituições" titleAlignment="Center">
+	<Page showHeader="true" title="Cadastro de Vagas" titleAlignment="Center">
         <content>
             <form:Form >
                 <form:title>
@@ -19,34 +20,33 @@
                         <form:formElements>
                             <form:FormElement >
                                 <form:label>
-                                    <Label text="Nome" design="Bold"></Label>
+                                    <Label text="Descrição" design="Bold"></Label>
                                 </form:label>
                                 <form:fields>
-                                    <TextArea value="{Instituicoes>/nome}"/>
+                                    <TextArea value="{Vaga>/descricao}"/>
                                 </form:fields>
                             </form:FormElement>
 
                             <form:FormElement >
                                 <form:label>
-                                    <Label text="E-mail" design="Bold"></Label>
+                                    <Label text="Requisitos" design="Bold"></Label>
                                 </form:label>
                                 <form:fields>
-                                    <TextArea value="{Instituicoes>/e-mail}"/>
+                                    <TextArea value="{Vaga>/requisitos}"/>
                                 </form:fields>
                             </form:FormElement>
 
                             <form:FormElement >
                                 <form:label>
-                                    <Label text="Tipo de ensino" design="Bold"></Label>
+                                    <Label text="Nível de conhecimento em TI" design="Bold"></Label>
                                 </form:label>
                                 <form:fields>
-                                    <ComboBox selectedKey="{Instituicoes>/tipo_ensino}">
+                                    <ComboBox selectedKey="{Vaga>/nivel_conhecimento}">
                                         <items>
-                                            <core:Item key="Ensino Médio Público" text="Ensino Médio Público" />
-                                             <core:Item key="Ensino Médio Particular" text="Ensino Médio Particular" />
-                                            <core:Item key="Ensino Médio Técnico" text="Ensino Médio Técnico" />
-                                            <core:Item key="Técnico" text="Técnico" />
-                                            <core:Item key="Ensino Superior" text="Ensino Superior" />
+                                            <core:Item key="Nenhum" text="Nenhum" />
+                                            <core:Item key="Básico" text="Básico" />
+                                            <core:Item key="Intermediário" text="Intermediário" />
+                                            <core:Item key="Avançado" text="Avançado" />
                                         </items>
                                     </ComboBox>
                                 </form:fields>

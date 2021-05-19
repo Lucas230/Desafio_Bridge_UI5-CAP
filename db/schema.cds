@@ -18,7 +18,7 @@ entity Instituicoes : cuid {
         tecnico;
         ensino_medio_tecnico;
         superior;
-    } default 'Superior';
+    } default 'superior';
 }
 
 entity Vagas : cuid {

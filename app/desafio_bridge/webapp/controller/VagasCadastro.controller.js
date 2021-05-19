@@ -1,28 +1,27 @@
 sap.ui.define([
-    "sap/ui/core/mvc/Controller",
-    "sap/ui/model/json/JSONModel",
-    "sap/m/MessageBox"
-],
-	/**
-	 * @param {typeof sap.ui.core.mvc.Controller} Controller
-	 */
+        "./BaseController",
+        "sap/ui/model/json/JSONModel",
+        "sap/m/MessageBox"
+    ],
+    
 	function (BaseController, JSONModel, MessageBox) {
 		"use strict";
 
-		return BaseController.extend("desafiobridge.desafiobridge.InstituicoesCadastro", {
+		return BaseController.extend("desafiobridge.desafiobridge.VagasCadastro", {
 			onInit: function () {
                 // Rota de cadastro
-                this.getRouter().getRoute("InstituicoesCadastro").attachPatternMatched(this.handleRouteMatched, this);
-                 // Rota de edição
-                 this.getRouter().getRoute("InstituicaoCadastro").attachPatternMatched(this.handleRouteMatchedEditarInstituicaoCadastro, this);
+                this.getRouter().getRoute("VagasCadastro").attachPatternMatched(this.handleRouteMatched, this);
+                // Rota de edição
+                /*this.getRouter().getRoute("VagasEditar").attachPatternMatched(this.handleRouteMatchedEditarVaga, this);*/
             },
+            
             // Rota de cadastro
             handleRouteMatched: function(){
                 this.getView().setModel();
             },
 
             // Rota de edição
-            handleRouteMatchedEditarInstituicaoCadastro: async function(){
+            handleRouteMatchedEditarVaga: async function(){
                 var that = this;
                 var id = this.getRouter().getHashChanger().getHash().split("/")[1];
                 this.getView().setBusy(true);
@@ -31,10 +30,10 @@ sap.ui.define([
                     "url": `desafiobridge.desafiobridge/${id}`, // concatena a URL com o ID
                     "method": "GET",
                     success(data) {
-                        that.getView().setModel(new JSONModel(data), "Instituicao"); // salva o retorno da API (data) em um Model chamado 'Vaga'
+                        that.getView().setModel(new JSONModel(data), "Vaga"); // salva o retorno da API (data) em um Model chamado 'Vaga'
                     },
                     error() {
-                        MessageBox.error("Não foi possível buscar as Instituicoes.") //Se der erro de API, exibe uma mensagem ao usuário
+                        MessageBox.error("Não foi possível buscar as Vagas.") //Se der erro de API, exibe uma mensagem ao usuário
                     }
                 });
                 this.getView().setBusy(false);
@@ -42,37 +41,37 @@ sap.ui.define([
 
             // Função do botão "Confirmar"
             onConfirmar: async function(){
-                var oVaga = this.getView().getModel("Instituicoes").getData();
+                var oVaga = this.getView().getModel("Vaga").getData();
                 var that = this;
-                console.log(oInstituicoes)
+                console.log(oVaga)
 
-                // Primeiro é validado se a rota que estamos é a rota de 'instituicoesEditar'
+                // Primeiro é validado se a rota que estamos é a rota de 'VagasEditar'
                 // Se for, o botão será responsável por atualizar (PUT) os dados
                 // Senão, irá criar (POST) um novo registro na tabela
-                if(this.getRouter().getHashChanger().getHash().search("instituicoesEditar") === 0){
+                if(this.getRouter().getHashChanger().getHash().search("VagasEditar") === 0){
 
-                    await $.ajax(`/main/InstituicoesSet/${oInstituicoes.id}`, { // Concatena o ID da instituicao selecionado na url
+                    await $.ajax(`/api/parceiros/${oVaga.id}`, { // Concatena o ID da vaga selecionado na url
                     method: "PUT",
                     headers: {
                         "Content-Type": "application/json"
                     },
                     // Cria a estrutura dos dados para enviar para API
                     data: JSON.stringify({
-                        "nome": oInstituicoes.nome,
-                        "E-mail": oInstituicoes.email,
-                        "Tipo de ensino": oInstituicoes.tipo_ensino
+                        "nome": oVaga.descricao,
+                        "tipo": oVaga.requisitos,
+                        "conhecimento": oVaga.nivel_conhecimento
                     }),
                     success() {
-                        // Se a api retornar sucesso, exibe uma mensagem para o usuário e navega para a tela de "InstituicaoConsulta"
+                        // Se a api retornar sucesso, exibe uma mensagem para o usuário e navega para a tela de "VagasConsulta"
                         MessageBox.success("Editado com sucesso!", {
                             onClose: function() {
-                                that.getRouter().navTo("InstituicoesConsulta");
+                                that.getRouter().navTo("VagasConsulta");
                             }
                         });
                     },
                     error() {
                         //Se a api retornar erro, exibe uma mensagem ao usuário
-                        MessageBox.error("Não foi possível editar a Instituição.");
+                        MessageBox.error("Não foi possível editar a vaga.");
                     }
                 });
 
@@ -80,7 +79,7 @@ sap.ui.define([
 
                     this.getView().setBusy(true);
                     // Método POST para salvar os dados 
-                    await $.ajax("/main/InstituicoesSet", {
+                    await $.ajax("/api/parceiros", {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json"
@@ -90,7 +89,7 @@ sap.ui.define([
                             MessageBox.success("Salvo com sucesso!");
                         },
                         error(){
-                            MessageBox.error("Não foi possível salvar a instituição!");
+                            MessageBox.error("Não foi possível salvar a vaga!");
                         }
                     })
 
@@ -101,14 +100,13 @@ sap.ui.define([
 
             // Função do botão Cancelar
             onCancelar: function(){
-                // Se a rota for a de "InstituicaoEditar", navega para a tela de Consuta
-                // Senão, limpa o model 'Instituicao'
-                if(this.getRouter().getHashChanger().getHash().search("InstituicaoEditar") === 0){
-                    this.getRouter().navTo("InstituicaoConsulta");
+                // Se a rota for a de "VagasEditar", navega para a tela de Consuta
+                // Senão, limpa o model 'Vaga'
+                if(this.getRouter().getHashChanger().getHash().search("VagasEditar") === 0){
+                    this.getRouter().navTo("VagasConsulta");
                 }else{
-                    this.getView().setModel("Instituicao");
+                    this.getView().setModel( "Vaga");
                 }
             }
 		});
 	});
-            
