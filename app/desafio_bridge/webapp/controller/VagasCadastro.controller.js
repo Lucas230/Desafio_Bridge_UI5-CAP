@@ -9,25 +9,27 @@ sap.ui.define([
 
 		return BaseController.extend("desafiobridge.desafiobridge.VagasCadastro", {
 			onInit: function () {
+                
+                var oModelLocal = {
+                    descricao:"",
+                    empresa_ID: ""
+                };
+                this.setModel(new JSONModel(oModelLocal), "Vaga");
+
                 // Rota de cadastro
                 this.getRouter().getRoute("VagasCadastro").attachPatternMatched(this.handleRouteMatched, this);
                 // Rota de edição
                 /*this.getRouter().getRoute("VagasEditar").attachPatternMatched(this.handleRouteMatchedEditarVaga, this);*/
             },
-            
-            // Rota de cadastro
-            handleRouteMatched: function(){
-                this.getView().setModel();
-            },
 
             // Rota de edição
             handleRouteMatchedEditarVaga: async function(){
                 var that = this;
-                var id = this.getRouter().getHashChanger().getHash().split("/")[1];
+                var ID = this.getRouter().getHashChanger().getHash().split("/")[1];
                 this.getView().setBusy(true);
                 await 
                 $.ajax({
-                    "url": `desafiobridge.desafiobridge/${id}`, // concatena a URL com o ID
+                    "url": "/main/VagasSet('"+ ID +"')", // concatena a URL com o ID
                     "method": "GET",
                     success(data) {
                         that.getView().setModel(new JSONModel(data), "Vaga"); // salva o retorno da API (data) em um Model chamado 'Vaga'
@@ -43,23 +45,25 @@ sap.ui.define([
             onConfirmar: async function(){
                 var oVaga = this.getView().getModel("Vaga").getData();
                 var that = this;
-                console.log(oVaga)
+                console.log(oVaga);
 
                 // Primeiro é validado se a rota que estamos é a rota de 'VagasEditar'
                 // Se for, o botão será responsável por atualizar (PUT) os dados
                 // Senão, irá criar (POST) um novo registro na tabela
                 if(this.getRouter().getHashChanger().getHash().search("VagasEditar") === 0){
 
-                    await $.ajax(`/api/parceiros/${oVaga.id}`, { // Concatena o ID da vaga selecionado na url
+                    await $.ajax("/main/VagasSet('"+ oVaga.ID +"')", { // Concatena o ID da vaga selecionado na url
                     method: "PUT",
                     headers: {
                         "Content-Type": "application/json"
                     },
                     // Cria a estrutura dos dados para enviar para API
                     data: JSON.stringify({
-                        "nome": oVaga.descricao,
-                        "tipo": oVaga.requisitos,
-                        "conhecimento": oVaga.nivel_conhecimento
+                        "descricao": oVaga.descricao,
+                        "requisitos": oVaga.requisitos,
+                        "nivel_conhecimento": oVaga.nivel_conhecimento,
+                        "empresa": oVaga.empresa,
+                        "participantes": oVaga.participantes
                     }),
                     success() {
                         // Se a api retornar sucesso, exibe uma mensagem para o usuário e navega para a tela de "VagasConsulta"
@@ -74,12 +78,11 @@ sap.ui.define([
                         MessageBox.error("Não foi possível editar a vaga.");
                     }
                 });
-
                 }else{
-
                     this.getView().setBusy(true);
                     // Método POST para salvar os dados 
-                    await $.ajax("/api/parceiros", {
+                
+                    await $.ajax("/main/VagasSet", {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json"
@@ -88,7 +91,8 @@ sap.ui.define([
                         success(){
                             MessageBox.success("Salvo com sucesso!");
                         },
-                        error(){
+                        error(XHR){
+                            console.log(XHR);
                             MessageBox.error("Não foi possível salvar a vaga!");
                         }
                     })
@@ -96,6 +100,7 @@ sap.ui.define([
                     this.getView().setBusy(false);
 
                 }
+
             },
 
             // Função do botão Cancelar
@@ -105,7 +110,7 @@ sap.ui.define([
                 if(this.getRouter().getHashChanger().getHash().search("VagasEditar") === 0){
                     this.getRouter().navTo("VagasConsulta");
                 }else{
-                    this.getView().setModel( "Vaga");
+                    this.getView().setModel("Vaga");
                 }
             }
 		});
