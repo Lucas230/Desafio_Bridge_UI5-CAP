@@ -20,18 +20,22 @@ xmlns="sap.m">
                         <Label wrapping="true" text="ID" design="Bold"></Label>
                     </Column>
                     <Column demandPopin="true" minScreenWidth="Desktop">
-                        <Label wrapping="true" text="Empresa" design="Bold"></Label>
+                        <Label wrapping="true" text="Descrição" design="Bold"></Label>
                     </Column>
                     <Column demandPopin="true" minScreenWidth="Desktop">
-                        <Label wrapping="true" text="Descrição" design="Bold"></Label>
+                        <Label wrapping="true" text="Nivel de conhecimento" design="Bold"></Label>
+                    </Column>
+                    <Column demandPopin="true" minScreenWidth="Desktop">
+                        <Label wrapping="true" text="Empresa" design="Bold"></Label>
                     </Column>
                 </columns>
                 <items>
                     <ColumnListItem type="Detail" detailPress="onNavEditarVaga">
                         <cells>
-                            <Text text="{Vagas>id}"></Text>
-                            <Text text="{Vagas>empresa}"></Text>
+                            <Text text="{Vagas>ID}"></Text>
                             <Text text="{Vagas>descricao}"></Text>
+                            <Text text="{Vagas>nivel_conhecimento}"></Text>
+                            <Text text="{Vagas>empresa_ID}"></Text>
                         </cells>
                     </ColumnListItem>
                 </items>

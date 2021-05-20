@@ -19,7 +19,7 @@ sap.ui.define([
                 // Rota de cadastro
                 this.getRouter().getRoute("VagasCadastro").attachPatternMatched(this.handleRouteMatched, this);
                 // Rota de edição
-                /*this.getRouter().getRoute("VagasEditar").attachPatternMatched(this.handleRouteMatchedEditarVaga, this);*/
+                this.getRouter().getRoute("VagasEditar").attachPatternMatched(this.handleRouteMatchedEditarVaga, this);
             },
 
             // Rota de edição

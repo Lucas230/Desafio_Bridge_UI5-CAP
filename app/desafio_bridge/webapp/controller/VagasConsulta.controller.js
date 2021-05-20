@@ -25,27 +25,25 @@ sap.ui.define([
                     "url": "/main/VagasSet",
                     "method": "GET",
                     success(data){
-                        that.getView().setModel(new JSONModel(data), "Vagas");
-                        console.log(data);
+                        that.getView().setModel(new JSONModel(data.value), "Vagas");
                     },
                     error(){
-                        MessageBox.error("Não foi possível buscar as Vagas.")
+                        MessageBox.error("Não foi possível buscar as Vagas.");
                     }
                 })
             },
             
             // Função do botão 'Excluir'
             onExcluir: async function(oEvent){
-                var id = oEvent.getParameter('listItem').getBindingContext("Vagas").getObject().id; // pega o ID do Vaga selecionado
+                var id = oEvent.getParameter('listItem').getBindingContext("Vagas").getObject().ID; // pega o ID do Vaga selecionado
                 this.getView().setBusy(true);
-
                 // Método DELETE para deletar um registro 
                 await
                 $.ajax({
-                    "url": `/api/Vagas/${id}`,
+                    "url": "/main/VagasSet('"+ ID +"')",
                     "method": "DELETE",
                     success(data){
-                        MessageBox.success("Excluído com sucesso!")
+                        MessageBox.success("Excluído com sucesso!");
                     },
                     error(){
                         MessageBox.error("Não foi possível excluir o Vaga.")
