@@ -24,7 +24,7 @@ sap.ui.define([
 
             onNavParticipanteCadastro: function(){
                 this.getRouter().navTo("ParticipanteCadastro");
-             }
+             },
             
             // Função do botão de "Cadastro de instituições"
             onNavInstituicoesCadastro: function(){
