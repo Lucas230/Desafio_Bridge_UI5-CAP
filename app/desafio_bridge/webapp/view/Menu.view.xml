@@ -11,6 +11,7 @@
                 <List>
                     <items>
                         <StandardListItem title="Cadastro de Vagas" type="Active" press="onNavVagasCadastro"/>
+                        <StandardListItem title="Consulta de Vagas" type="Active" press="onNavVagasConsulta"/>
                     </items>
                 </List>
             </VBox>

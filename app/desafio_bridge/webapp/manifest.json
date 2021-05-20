@@ -104,6 +104,11 @@
                     "name": "VagasCadastro",
                     "pattern": "VagasCadastro",
                     "target": [ "Menu", "VagasCadastro"]
+                },
+                {
+                    "name": "VagasConsulta",
+                    "pattern": "VagasConsulta",
+                    "target": [ "Menu", "VagasConsulta"]
                 }
             ],
             "targets": {
@@ -128,6 +133,14 @@
                     "clearControlAggregation": false,
                     "viewId": "vagascadastro",
                     "viewName": "VagasCadastro",
+                    "controlAggregation": "detailPages"
+                },
+                "VagasConsulta": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "vagasconsulta",
+                    "viewName": "VagasConsulta",
                     "controlAggregation": "detailPages"
                 }
             }

@@ -5,5 +5,4 @@ service MainService {
     entity InstituicoesSet as projection on bridge.Instituicoes;
     entity ParticipantesSet as projection on bridge.Participantes;
     entity VagasSet as projection on bridge.Vagas;
-    entity Vagas_ParticipantesSet as projection on bridge.Vagas_Participantes;
 }
