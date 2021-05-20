@@ -106,9 +106,20 @@
                     "target": [ "Menu", "VagasCadastro"]
                 },
                 {
+                    "name": "InstituicoesCadastro",
+                    "pattern": "InstituicoesCadastro",
+                    "target": [ "Menu", "InstituicoesCadastro"]
+                },
+                {
+                    "name": "EditarInstituicoes",
+                    "pattern": "EditarInstituicoes/{id}",
+                    "target": ["Menu", "InstituicoesCadastro"]
+                },
+                {
                     "name": "VagasConsulta",
                     "pattern": "VagasConsulta",
                     "target": [ "Menu", "VagasConsulta"]
+
                 }
             ],
             "targets": {
@@ -126,6 +137,14 @@
                     "clearControlAggregation": false,
                     "viewId": "View",
                     "viewName": "View"
+                },
+                "InstituicoesCadastro": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "instituicoescadastro",
+                    "viewName": "InstituicoesCadastro",
+                    "controlAggregation": "detailPages"
                 },
                 "VagasCadastro": {
                     "viewType": "XML",

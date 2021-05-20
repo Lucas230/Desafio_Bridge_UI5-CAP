@@ -20,6 +20,11 @@ sap.ui.define([
             // Função do botão de "Cadastro de vagas"
             onNavVagasCadastro: function(){
                 this.getRouter().navTo("VagasCadastro");
+            },
+            
+            // Função do botão de "Cadastro de instituições"
+            onNavInstituicoesCadastro: function(){
+                this.getRouter().navTo("InstituicoesCadastro");
             }
 		});
 	});
