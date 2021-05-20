@@ -165,7 +165,7 @@
                     "viewId": "participantecadastro",
                     "viewName": "ParticipanteCadastro",
                     "controlAggregation": "detailPages"
-                }
+                },
                 "VagasConsulta": {
                     "viewType": "XML",
                     "transition": "slide",
