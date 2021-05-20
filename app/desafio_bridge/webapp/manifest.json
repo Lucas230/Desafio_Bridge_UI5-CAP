@@ -124,6 +124,11 @@
                     "name": "VagasConsulta",
                     "pattern": "VagasConsulta",
                     "target": [ "Menu", "VagasConsulta"]
+                },
+                {
+                    "name": "VagasEditar",
+                    "pattern": "EditarVagas({id})",
+                    "target": ["Menu", "VagasCadastro"]
                 }
             ],
             "targets": {

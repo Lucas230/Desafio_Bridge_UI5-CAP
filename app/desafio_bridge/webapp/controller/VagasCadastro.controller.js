@@ -19,13 +19,14 @@ sap.ui.define([
                 // Rota de cadastro
                 this.getRouter().getRoute("VagasCadastro").attachPatternMatched(this.handleRouteMatched, this);
                 // Rota de edição
-                //this.getRouter().getRoute("VagasEditar").attachPatternMatched(this.handleRouteMatchedEditarVaga, this);
+                this.getRouter().getRoute("VagasEditar").attachPatternMatched(this.handleRouteMatchedEditarVaga, this);
             },
 
             // Rota de edição
             handleRouteMatchedEditarVaga: async function(){
                 var that = this;
                 var ID = this.getRouter().getHashChanger().getHash().split("/")[1];
+                console.log(ID);
                 this.getView().setBusy(true);
                 await 
                 $.ajax({
