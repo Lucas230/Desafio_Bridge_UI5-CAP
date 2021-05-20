@@ -113,7 +113,7 @@
                 {
                     "name": "EditarInstituicoes",
                     "pattern": "EditarInstituicoes/{id}",
-                    "target": ["Menu", "CadastroInstituicoes"]
+                    "target": ["Menu", "InstituicoesCadastro"]
                 }
             ],
             "targets": {
@@ -136,7 +136,7 @@
                     "viewType": "XML",
                     "transition": "slide",
                     "clearControlAggregation": false,
-                    "viewId": "instituicoesscadastro",
+                    "viewId": "instituicoescadastro",
                     "viewName": "InstituicoesCadastro",
                     "controlAggregation": "detailPages"
                 },

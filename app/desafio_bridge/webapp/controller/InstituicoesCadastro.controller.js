@@ -1,5 +1,5 @@
 sap.ui.define([
-    "sap/ui/core/mvc/Controller",
+    "./BaseController",
     "sap/ui/model/json/JSONModel",
     "sap/m/MessageBox"
 ],
@@ -14,7 +14,7 @@ sap.ui.define([
                 // Rota de cadastro
                 this.getRouter().getRoute("InstituicoesCadastro").attachPatternMatched(this.handleRouteMatched, this);
                  // Rota de edição
-                 this.getRouter().getRoute("InstituicaoCadastro").attachPatternMatched(this.handleRouteMatchedEditarInstituicaoCadastro, this);
+                 /*this.getRouter().getRoute("InstituicoesCadastro").attachPatternMatched(this.handleRouteMatchedEditarInstituicoesCadastro, this);*/
             },
             // Rota de cadastro
             handleRouteMatched: function(){
@@ -22,7 +22,7 @@ sap.ui.define([
             },
 
             // Rota de edição
-            handleRouteMatchedEditarInstituicaoCadastro: async function(){
+            handleRouteMatchedEditarInstituicoesCadastro: async function(){
                 var that = this;
                 var id = this.getRouter().getHashChanger().getHash().split("/")[1];
                 this.getView().setBusy(true);
@@ -31,7 +31,7 @@ sap.ui.define([
                     "url": `desafiobridge.desafiobridge/${id}`, // concatena a URL com o ID
                     "method": "GET",
                     success(data) {
-                        that.getView().setModel(new JSONModel(data), "Instituicao"); // salva o retorno da API (data) em um Model chamado 'Vaga'
+                        that.getView().setModel(new JSONModel(data), "Instituicoes"); // salva o retorno da API (data) em um Model chamado 'Vaga'
                     },
                     error() {
                         MessageBox.error("Não foi possível buscar as Instituicoes.") //Se der erro de API, exibe uma mensagem ao usuário
@@ -42,14 +42,14 @@ sap.ui.define([
 
             // Função do botão "Confirmar"
             onConfirmar: async function(){
-                var oVaga = this.getView().getModel("Instituicoes").getData();
+                var oInstituicoes = this.getView().getModel("Instituicoes").getData();
                 var that = this;
                 console.log(oInstituicoes)
 
                 // Primeiro é validado se a rota que estamos é a rota de 'instituicoesEditar'
                 // Se for, o botão será responsável por atualizar (PUT) os dados
                 // Senão, irá criar (POST) um novo registro na tabela
-                if(this.getRouter().getHashChanger().getHash().search("instituicoesEditar") === 0){
+                if(this.getRouter().getHashChanger().getHash().search("InstituicoesEditar") === 0){
 
                     await $.ajax(`/main/InstituicoesSet/${oInstituicoes.id}`, { // Concatena o ID da instituicao selecionado na url
                     method: "PUT",
@@ -103,10 +103,10 @@ sap.ui.define([
             onCancelar: function(){
                 // Se a rota for a de "InstituicaoEditar", navega para a tela de Consuta
                 // Senão, limpa o model 'Instituicao'
-                if(this.getRouter().getHashChanger().getHash().search("InstituicaoEditar") === 0){
-                    this.getRouter().navTo("InstituicaoConsulta");
+                if(this.getRouter().getHashChanger().getHash().search("InstituicoesEditar") === 0){
+                    this.getRouter().navTo("InstituicoesConsulta");
                 }else{
-                    this.getView().setModel("Instituicao");
+                    this.getView().setModel("Instituicoes");
                 }
             }
 		});
