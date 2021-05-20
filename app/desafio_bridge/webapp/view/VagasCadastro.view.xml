@@ -35,6 +35,7 @@
                                     <TextArea value="{Vaga>/requisitos}"/>
                                 </form:fields>
                             </form:FormElement>
+
                         </form:formElements>
 
                         <form:formElements>
