@@ -9,7 +9,7 @@ sap.ui.define([
 
 		return Controller.extend("desafiobridge.desafiobridge.controller.View", {
 			onInit: function () {
-                console.log("teste");
+               
 			}
 		});
 	});

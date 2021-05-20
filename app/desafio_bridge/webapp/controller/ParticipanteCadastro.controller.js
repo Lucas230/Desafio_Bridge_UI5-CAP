@@ -7,17 +7,17 @@ sap.ui.define([
 	function (BaseController, JSONModel, MessageBox) {
 		"use strict";
 
-		return BaseController.extend("desafiobridge.desafiobridge.VagasCadastro", {
+		return BaseController.extend("desafiobridge.desafiobridge.ParticipanteCadastro", {
 			onInit: function () {
                 // Rota de cadastro
-                this.getRouter().getRoute("VagasCadastro").attachPatternMatched(this.handleRouteMatched, this);
+                this.getRouter().getRoute("ParticipanteCadastro").attachPatternMatched(this.handleRouteMatched, this);
                 // Rota de edição
                 /*this.getRouter().getRoute("VagasEditar").attachPatternMatched(this.handleRouteMatchedEditarVaga, this);*/
             },
             
             // Rota de cadastro
             handleRouteMatched: function(){
-                this.getView().setModel();
+                //this.getView().setModel();
             },
 
             // Rota de edição
@@ -41,9 +41,9 @@ sap.ui.define([
 
             // Função do botão "Confirmar"
             onConfirmar: async function(){
-                var oVaga = this.getView().getModel("Vaga").getData();
+                var oParticipante = this.getView().getModel("Participante").getData();
                 var that = this;
-                console.log(oVaga)
+                console.log(oParticipante)
 
                 // Primeiro é validado se a rota que estamos é a rota de 'VagasEditar'
                 // Se for, o botão será responsável por atualizar (PUT) os dados
@@ -75,16 +75,17 @@ sap.ui.define([
                     }
                 });
 
-                }else{
+                }
+                else{
 
                     this.getView().setBusy(true);
                     // Método POST para salvar os dados 
-                    await $.ajax("/api/parceiros", {
+                    await $.ajax("/api/Participante", {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json"
                         },
-                        data: JSON.stringify(oVaga),
+                        data: JSON.stringify(oParticipante),
                         success(){
                             MessageBox.success("Salvo com sucesso!");
                         },

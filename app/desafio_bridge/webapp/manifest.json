@@ -94,9 +94,32 @@
                     "target": [
                         "TargetView"
                     ]
+                },
+                {
+                    "name": "Menu",
+                    "pattern": "",
+                    "target": ["Menu"]
+                },
+                {
+                    "name": "VagasCadastro",
+                    "pattern": "VagasCadastro",
+                    "target": [ "Menu", "VagasCadastro"]
+                },
+                {
+                    "name": "ParticipanteCadastro",
+                    "pattern": "ParticipanteCadastro",
+                    "target": [ "Menu", "ParticipanteCadastro"]
                 }
             ],
             "targets": {
+                "Menu": { 
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"viewId": "menu",
+                    "viewName": "Menu",
+                    "controlAggregation": "masterPages"
+                },
                 "TargetView": {
                     "viewType": "XML",
                     "transition": "slide",
@@ -110,6 +133,14 @@
                     "clearControlAggregation": false,
                     "viewId": "vagascadastro",
                     "viewName": "VagasCadastro",
+                    "controlAggregation": "detailPages"
+                },
+                "ParticipanteCadastro": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "participantecadastro",
+                    "viewName": "ParticipanteCadastro",
                     "controlAggregation": "detailPages"
                 }
             }
