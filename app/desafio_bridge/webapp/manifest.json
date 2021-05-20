@@ -124,6 +124,11 @@
                     "name": "VagasConsulta",
                     "pattern": "VagasConsulta",
                     "target": [ "Menu", "VagasConsulta"]
+                },
+                {
+                    "name": "InstituicoesConsulta",
+                    "pattern": "InstituicoesConsulta",
+                    "target": [ "Menu", "InstituicoesConsulta"]
                 }
             ],
             "targets": {
@@ -172,6 +177,14 @@
                     "clearControlAggregation": false,
                     "viewId": "vagasconsulta",
                     "viewName": "VagasConsulta",
+                    "controlAggregation": "detailPages"
+                },
+                "InstituicoesConsulta": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "instituicoesconsulta",
+                    "viewName": "InstituicoesConsulta",
                     "controlAggregation": "detailPages"
                 }
             }
