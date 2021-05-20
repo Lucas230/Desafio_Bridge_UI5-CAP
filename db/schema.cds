@@ -12,27 +12,15 @@ entity Empresas : cuid {
 entity Instituicoes : cuid {
     nome        : String(50);
     email       : String(50);
-    tipo_ensino : String enum {
-        ensino_medio_publico;
-        ensino_medio_particular;
-        tecnico;
-        ensino_medio_tecnico;
-        superior;
-    } default 'Superior';
+    tipo_ensino : String(50);
 }
 
 entity Vagas : cuid {
     descricao          : String(100);
     requisitos         : String(100);
     nivel_conhecimento : String(50);
+    treinamento        : String(50);
     empresa            : Association to Empresas;
-    participantes      : Association to many Vagas_Participantes
-                             on participantes.vagas = $self;
-}
-
-entity Vagas_Participantes {
-    vagas         : Association to Vagas;
-    participantes : Association to Participantes;
 }
 
 entity Participantes : cuid {
@@ -49,6 +37,4 @@ entity Participantes : cuid {
     dt_inicio    : Date;
     dt_fim       : Date;
     curso        : String(50);
-    vagas        : Association to many Vagas_Participantes
-                       on vagas.participantes = $self;
 }

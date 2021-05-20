@@ -20,10 +20,10 @@
                         <form:formElements>
                             <form:FormElement >
                                 <form:label>
-                                    <Label text="Descrição" design="Bold"></Label>
+                                <Label text="Descrição" design="Bold"></Label>
                                 </form:label>
                                 <form:fields>
-                                    <TextArea value="{Vaga>/descricao}"/>
+                                <TextArea value="{Vaga>/descricao}"/>
                                 </form:fields>
                             </form:FormElement>
 
@@ -35,7 +35,10 @@
                                     <TextArea value="{Vaga>/requisitos}"/>
                                 </form:fields>
                             </form:FormElement>
+                        </form:formElements>
 
+                        <form:formElements>
+  
                             <form:FormElement >
                                 <form:label>
                                     <Label text="Nível de conhecimento em TI" design="Bold"></Label>
@@ -47,6 +50,22 @@
                                             <core:Item key="Básico" text="Básico" />
                                             <core:Item key="Intermediário" text="Intermediário" />
                                             <core:Item key="Avançado" text="Avançado" />
+                                        </items>
+                                    </ComboBox>
+                                </form:fields>
+                            </form:FormElement>
+                            
+                            <form:FormElement >
+                                <form:label>
+                                    <Label text="Empresa" design="Bold"></Label>
+                                </form:label>
+                                <form:fields>
+                                    <ComboBox selectedKey="{Vaga>/empresa_ID}">
+                                        <items>
+                                            <core:Item key="1d53302c-742b-41ae-b066-2453d35c8aab" text="L4E" />
+                                            <core:Item key="3d7e1582-a3c0-445a-a4e4-d30bad0ce19e" text="Strong" />
+                                            <core:Item key="6d01f013-9144-448a-891c-95065f53e1e7" text="Cienci" />
+                                            <core:Item key="f5cf13ff-19ba-4009-b609-34124bea2016" text="Microsoft" />
                                         </items>
                                     </ComboBox>
                                 </form:fields>

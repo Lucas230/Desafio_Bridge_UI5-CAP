@@ -13,16 +13,22 @@ sap.ui.define([
             },
             
             // Função do botão de "Consulta de Vagas"
-            onNavConsultaParceiros: function(){
-                this.getRouter().navTo("");
+            onNavVagasConsulta: function(){
+                this.getRouter().navTo("VagasConsulta");
             },
             
             // Função do botão de "Cadastro de vagas"
             onNavVagasCadastro: function(){
                 this.getRouter().navTo("VagasCadastro");
             },
+
             onNavParticipanteCadastro: function(){
                 this.getRouter().navTo("ParticipanteCadastro");
+             }
+            
+            // Função do botão de "Cadastro de instituições"
+            onNavInstituicoesCadastro: function(){
+                this.getRouter().navTo("InstituicoesCadastro");
             }
 		});
 	});

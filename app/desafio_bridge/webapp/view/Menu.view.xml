@@ -11,6 +11,9 @@
                 <List>
                     <items>
                         <StandardListItem title="Cadastro de Vagas" type="Active" press="onNavVagasCadastro"/>
+                        <StandardListItem title="Cadastro de Instituições" type="Active" press="onNavInstituicoesCadastro"/>
+
+                        <StandardListItem title="Consulta de Vagas" type="Active" press="onNavVagasConsulta"/>
                     </items>
                     <items>
                         <StandardListItem title="Cadastro de Participantes" type="Active" press="onNavParticipanteCadastro"/>
