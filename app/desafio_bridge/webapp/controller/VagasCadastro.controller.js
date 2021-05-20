@@ -91,8 +91,7 @@ sap.ui.define([
                         success(){
                             MessageBox.success("Salvo com sucesso!");
                         },
-                        error(XHR){
-                            console.log(XHR);
+                        error(){
                             MessageBox.error("Não foi possível salvar a vaga!");
                         }
                     })
