@@ -1,0 +1,61 @@
+<mvc:View 
+    xmlns:core="sap.ui.core"
+    xmlns:mvc="sap.ui.core.mvc"
+    controllerName="desafiobridge.desafiobridge.controller.EmpresasCadastro"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:form="sap.ui.layout.form"
+> 
+	
+	  <Page id="page" title="Cadastro de Empresas" titleAlignment="Center">
+          <content>
+				  <form:Form>
+				  <form:title>
+				       <core:Title text= "Preencha os campos necessarios" level="H6" ></core:Title>
+                  </form:title>
+				  <form:layout>
+				       <form:Columnlayout columnsL="2" columnsM="1" columnsXL="2"></form:Columnlayout>
+				  </form:layout>
+				  <form:formContainers>
+				     <form:formContainer>
+					     <form:formElements>
+						     <form:formElement>
+							     <form:label>
+								     <label text="nome: " design="bold"></label>
+							     </form:label>
+								 <form:fields>
+								    <imput></imput>
+							     </form:fields>
+                              </form:formElement>
+
+                             <form:formElement>
+							     <form:label>
+								     <label text="Email:" design="bold"></label>
+							     </form:label>
+								 <form:fields>
+								    <imput></imput>
+							     </form:fields>
+                             </form:formElement>
+
+                             <form:formElement>
+							     <form:label>
+								     <label text="Senha:" design="bold"></label>
+							     </form:label>
+								 <form:fields>
+								    <imput></imput>
+							     </form:fields>
+                             </form:formElement>
+
+                                   
+
+					     </form:formElements>
+					 </form:formContainer>
+
+				  </form:formContainers>
+                  </form:Form>
+				</content>
+			
+	
+	  </Page>
+	
+</mvc:View>
