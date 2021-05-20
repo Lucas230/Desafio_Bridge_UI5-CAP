@@ -127,7 +127,7 @@
                 },
                 {
                     "name": "VagasEditar",
-                    "pattern": "EditarVagas({id})",
+                    "pattern": "VagasEditar/{ID}",
                     "target": ["Menu", "VagasCadastro"]
                 }
             ],

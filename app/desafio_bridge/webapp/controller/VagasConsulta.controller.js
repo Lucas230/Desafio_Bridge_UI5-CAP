@@ -24,6 +24,7 @@ sap.ui.define([
                     "url": "/main/VagasSet",
                     "method": "GET",
                     success(data){
+                        console.log(data);
                         that.getView().setModel(new JSONModel(data.value), "Vagas");
                     },
                     error(){
@@ -39,26 +40,24 @@ sap.ui.define([
                 // Método DELETE para deletar um registro 
                 await
                 $.ajax({
-                    "url": "/main/VagasSet('"+ ID +"')",
+                    "url": "/main/VagasSet("+ id +")",
                     "method": "DELETE",
                     success(data){
                         MessageBox.success("Excluído com sucesso!");
                     },
                     error(){
-                        MessageBox.error("Não foi possível excluir o Vaga.")
+                        MessageBox.error("Não foi possível excluir o Vaga.");
                     }
 
                 });
                 await this.handleRouteMatched(); // chama a função para recarregar os dados da tabela
                 this.getView().setBusy(false);
-
             },
 
             // Função do botão editar da tabela
             onNavEditarVaga: function(oEvent){
-                var VagaId = oEvent.getSource().getBindingContext("Vagas").getObject().id; // pega o id do Vaga selecionado
-                console.log("Vagas" + VagaId);
-                this.getRouter().navTo("EditarVagas", {ID: VagaId}); // chama a rota de edição passando o id do Vaga selecionado
+                var VagaId = oEvent.getSource().getBindingContext("Vagas").getObject().ID; // pega o id do Vaga selecionado
+                this.getRouter().navTo("VagasEditar", {ID: VagaId}); // chama a rota de edição passando o id do Vaga selecionado
             },
 
             // Função do campo de busca (SearchField)
