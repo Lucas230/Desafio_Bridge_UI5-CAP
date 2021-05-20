@@ -44,6 +44,24 @@
       "problemMatcher": [
         "$cap-sqlite-bind-handler"
       ]
+    },
+    {
+      "label": "cds-deploy-DesafioFinal_Bridge-my.db",
+      "type": "shell",
+      "command": "cds",
+      "args": [
+        "deploy",
+        "--to",
+        "sqlite:my.db",
+        "--no-save"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "isBackground": true,
+      "problemMatcher": [
+        "$cap-sqlite-bind-handler"
+      ]
     }
   ]
 }
