@@ -131,7 +131,16 @@
                     "target": [ "Menu", "VagasConsulta"]
                 },
                 {
-
+                    "name": "ParticipantesConsulta",
+                    "pattern": "ParticipantesConsulta",
+                    "target": [ "Menu", "ParticipantesConsulta"]
+                },
+                {
+                    "name": "EditarParticipante",
+                    "pattern": "EditarParticipante/{id}",
+                    "target": ["Menu", "ParticipanteCadastro"]
+                },
+                { 
                     "name": "InstituicoesConsulta",
                     "pattern": "InstituicoesConsulta",
                     "target": [ "Menu", "InstituicoesConsulta"]
@@ -189,6 +198,13 @@
                     "viewId": "vagasconsulta",
                     "viewName": "VagasConsulta",
                     "controlAggregation": "detailPages"
+                },
+                "ParticipantesConsulta": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "participantesconsulta",
+                    "viewName": "ParticipantesConsulta",
                 },
                 "InstituicoesConsulta": {
                     "viewType": "XML",

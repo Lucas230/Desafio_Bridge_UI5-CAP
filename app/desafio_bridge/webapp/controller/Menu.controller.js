@@ -33,7 +33,9 @@ sap.ui.define([
             onNavInstituicoesCadastro: function(){
                 this.getRouter().navTo("InstituicoesCadastro");
             },
-            
+            onNavParticipantesConsulta: function(){
+                this.getRouter().navTo("ParticipantesConsulta");
+            },           
             // Função do botão de "Consulta de Instituicoes"
             onNavInstituicoesConsulta: function(){
                 this.getRouter().navTo("InstituicoesConsulta");
