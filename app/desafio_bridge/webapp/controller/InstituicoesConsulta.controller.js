@@ -40,7 +40,7 @@ sap.ui.define([
                 // Método DELETE para deletar um registro 
                 await
                 $.ajax({
-                    "url": "/main/InstituicoesSet('"+ ID +"')",
+                    "url": "/main/InstituicoesSet("+ id +")",
                     "method": "DELETE",
                     success(data){
                         MessageBox.success("Excluído com sucesso!");
