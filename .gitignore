@@ -27,3 +27,8 @@ mta_archives/
 # IDEs
 # .vscode
 # .idea
+
+# auto generated wildcard
+.env5
+# auto generated wildcard
+.env6

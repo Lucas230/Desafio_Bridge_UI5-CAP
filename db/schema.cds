@@ -19,7 +19,6 @@ entity Vagas : cuid {
     descricao          : String(100);
     requisitos         : String(100);
     nivel_conhecimento : String(50);
-    treinamento        : String(50);
     empresa            : Association to Empresas;
 }
 
@@ -34,7 +33,5 @@ entity Participantes : cuid {
     telefone     : String(20);
     escolaridade : String(20);
     instituicao  : Association to Instituicoes;
-    dt_inicio    : Date;
-    dt_fim       : Date;
     curso        : String(50);
 }

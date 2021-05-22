@@ -14,12 +14,16 @@ sap.ui.define([
                 // Rota de cadastro
                 this.getRouter().getRoute("InstituicoesCadastro").attachPatternMatched(this.handleRouteMatched, this);
                  // Rota de edição
-                 /*this.getRouter().getRoute("InstituicoesCadastro").attachPatternMatched(this.handleRouteMatchedEditarInstituicoesCadastro, this);*/
-            },
-            // Rota de cadastro
-            handleRouteMatched: function(){
-                this.getView().setModel();
-            },
+                 //this.getRouter().getRoute("InstituicoesCadastro").attachPatternMatched(this.handleRouteMatchedEditarInstituicoesCadastro, this);
+                var oModelLocal = {
+                    nome:"",
+                    email:"",
+                    tipo_ensino:""
+                };
+                this.setModel(new JSONModel(oModelLocal),"Instituicao");
+            
+            
+                },
 
             // Rota de edição
             handleRouteMatchedEditarInstituicoesCadastro: async function(){
@@ -42,9 +46,9 @@ sap.ui.define([
 
             // Função do botão "Confirmar"
             onConfirmar: async function(){
-                var oInstituicoes = this.getView().getModel("Instituicoes").getData();
+                var oInstituicoes = this.getView().getModel("Instituicao").getData();
                 var that = this;
-                console.log(oInstituicoes)
+               
 
                 // Primeiro é validado se a rota que estamos é a rota de 'instituicoesEditar'
                 // Se for, o botão será responsável por atualizar (PUT) os dados
@@ -77,19 +81,20 @@ sap.ui.define([
                 });
 
                 }else{
-
                     this.getView().setBusy(true);
                     // Método POST para salvar os dados 
+                    
                     await $.ajax("/main/InstituicoesSet", {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json"
                         },
-                        data: JSON.stringify(oVaga),
+                        data: JSON.stringify(oInstituicoes),
                         success(){
                             MessageBox.success("Salvo com sucesso!");
                         },
                         error(){
+                            console.log(oInstituicoes)
                             MessageBox.error("Não foi possível salvar a instituição!");
                         }
                     })
@@ -106,7 +111,7 @@ sap.ui.define([
                 if(this.getRouter().getHashChanger().getHash().search("InstituicoesEditar") === 0){
                     this.getRouter().navTo("InstituicoesConsulta");
                 }else{
-                    this.getView().setModel("Instituicoes");
+                    this.getView().setModel("Instituicao");
                 }
             }
 		});

@@ -13,7 +13,7 @@
                     <core:Title text="Preencha os campos necessários" level="H6" ></core:Title>
                 </form:title>
                 <form:layout>
-                <form:ColumnLayout columnsL="1" columnsM="1" columnsXL="2"></form:ColumnLayout>
+                    <form:ColumnLayout columnsL="1" columnsM="1" columnsXL="2"></form:ColumnLayout>
                 </form:layout>
                 <form:formContainers> 
                     <form:FormContainer >
@@ -38,10 +38,10 @@
                             
                             <form:FormElement >
                                 <form:fields>
-                                    <ComboBox selectedKey="{Vaga>/deficiencia}" placeholder="Possui deficiência?">
+                                    <ComboBox selectedKey="{Participante>/deficiencia}" placeholder="Possui deficiência?">
                                         <items>
-                                            <core:Item key="true" text="Sim" />
-                                            <core:Item key="false" text="Não" />
+                                            <core:Item key="S" text="Sim" />
+                                            <core:Item key="N" text="Não" />
                                         </items>
                                     </ComboBox>
                                 </form:fields>
@@ -49,7 +49,7 @@
 
                             <form:FormElement >
                                 <form:fields>
-                                    <ComboBox selectedKey="{Vaga>/sexo}" placeholder="Sexo">
+                                    <ComboBox selectedKey="{Participante>/sexo}" placeholder="Sexo">
                                         <items>
                                             <core:Item key="Masculino" text="Masculino" />
                                             <core:Item key="Feminino" text="Feminino" />
@@ -69,8 +69,7 @@
                                 <form:fields>
                                     <Input type="Password" value="{Participante>/confSenha}" placeholder="Confirmar senha"></Input>
                                 </form:fields>
-                            </form:FormElement>
-
+                            </form:FormElement >
                             
                         </form:formElements>
                     </form:FormContainer>
@@ -87,7 +86,7 @@
 
                             <form:FormElement >
                                 <form:fields>
-                                    <ComboBox selectedKey="{Vaga>/escolaridade}" placeholder="Escolaridade">
+                                    <ComboBox selectedKey="{Participante>/escolaridade}" placeholder="Escolaridade">
                                         <items>
                                             <core:Item key="Nenhum" text="Nenhum" />
                                             <core:Item key="Básico" text="Básico" />
@@ -100,12 +99,9 @@
 
                             <form:FormElement >
                                 <form:fields>
-                                    <ComboBox selectedKey="{Vaga>/instituicao}" placeholder="Instituicao">
+                                    <ComboBox selectedKey="{Participante>/instituicao_ID}" placeholder="Instituicao" items="{InstituicaoList>/}">
                                         <items>
-                                            <core:Item key="Nenhum" text="Nenhum" />
-                                            <core:Item key="Básico" text="Básico" />
-                                            <core:Item key="Intermediário" text="Intermediário" />
-                                            <core:Item key="Avançado" text="Avançado" />
+                                            <core:Item key="{InstituicaoList>ID}" text="{InstituicaoList>nome}" />
                                         </items>
                                     </ComboBox>
                                 </form:fields>
@@ -113,7 +109,7 @@
                             
                             <form:FormElement >
                                 <form:fields>
-                                    <ComboBox selectedKey="{Vaga>/curso}" placeholder="Curso">
+                                    <ComboBox selectedKey="{Participante>/curso}" placeholder="Curso">
                                         <items>
                                             <core:Item key="Nenhum" text="Nenhum" />
                                             <core:Item key="Básico" text="Básico" />
@@ -125,31 +121,13 @@
                             </form:FormElement>
 
                             <form:FormElement >
-                                <form:label>
-                                    <Label text="Data inicio" design="Bold"></Label>
-                                </form:label>
                                 <form:fields>
-                                    <DatePicker dateValue="{Participante>/dt_inicio}"/>
-                                </form:fields>
-                            </form:FormElement>
-
-                             <form:FormElement >
-                                <form:label>
-                                    <Label text="Data fim" design="Bold"></Label>
-                                </form:label>
-                                <form:fields>
-                                    <DatePicker dateValue="{Participante>/dt_fim}"/>
-                                </form:fields>
-                            </form:FormElement>
-
-                            <form:FormElement >
-                                <form:fields>
-                                    <ComboBox selectedKey="{Vaga>/conhecimento}" placeholder="Nível conhecimento em TI">
+                                    <ComboBox selectedKey="{Participante>/conhecimento}" placeholder="Nível conhecimento em TI">
                                         <items>
-                                            <core:Item key="Nenhum" text="Nenhum" />
-                                            <core:Item key="Básico" text="Básico" />
-                                            <core:Item key="Intermediário" text="Intermediário" />
-                                            <core:Item key="Avançado" text="Avançado" />
+                                            <core:Item key="nenhum" text="Nenhum" />
+                                            <core:Item key="basico" text="Básico" />
+                                            <core:Item key="intermediário" text="Intermediário" />
+                                            <core:Item key="avançado" text="Avançado" />
                                         </items>
                                     </ComboBox>
                                 </form:fields>

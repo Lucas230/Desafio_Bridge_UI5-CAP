@@ -11,7 +11,10 @@ sap.ui.define([
 			onInit: function () {
 
             },
-            
+            // Função do botão de "Cadastro de empresas"
+            onNavEmpresasCadastro: function(){
+                this.getRouter().navTo("EmpresasCadastro");
+            },
             // Função do botão de "Consulta de Vagas"
             onNavVagasConsulta: function(){
                 this.getRouter().navTo("VagasConsulta");
@@ -29,6 +32,13 @@ sap.ui.define([
             // Função do botão de "Cadastro de instituições"
             onNavInstituicoesCadastro: function(){
                 this.getRouter().navTo("InstituicoesCadastro");
-            }
+            },
+            onNavParticipantesConsulta: function(){
+                this.getRouter().navTo("ParticipantesConsulta");
+            },           
+            // Função do botão de "Consulta de Instituicoes"
+            onNavInstituicoesConsulta: function(){
+                this.getRouter().navTo("InstituicoesConsulta");
+            },
 		});
 	});

@@ -1,0 +1,45 @@
+<mvc:View 
+controllerName="desafiobridge.desafiobridge.controller.InstituicoesConsulta" 
+xmlns:mvc="sap.ui.core.mvc" 
+displayBlock="true" 
+xmlns="sap.m">
+	<Page showHeader="true" title="Consulta de Instituições" titleAlignment="Center">
+        <content>
+            <Table mode="Delete" id="tableInstituicoes" delete="onExcluir" items="{path: 'Instituicoes>/'}">
+                <headerToolbar>
+                    <OverflowToolbar >
+                        <content>
+                            <Title text="Instituições" level="H2" />
+                            <ToolbarSpacer ></ToolbarSpacer>
+                            <SearchField placeholder="Digite o nome de uma Instituição" width="50%" liveChange="onSearch" ></SearchField>
+                        </content>
+                    </OverflowToolbar>
+                </headerToolbar>
+                <columns>
+                    <Column demandPopin="true" minScreenWidth="Desktop">
+                        <Label wrapping="true" text="ID" design="Bold"></Label>
+                    </Column>
+                    <Column demandPopin="true" minScreenWidth="Desktop">
+                        <Label wrapping="true" text="Nome" design="Bold"></Label>
+                    </Column>
+                    <Column demandPopin="true" minScreenWidth="Desktop">
+                        <Label wrapping="true" text="E-mail" design="Bold"></Label>
+                    </Column>
+                    <Column demandPopin="true" minScreenWidth="Desktop">
+                        <Label wrapping="true" text="Tipo de ensino" design="Bold"></Label>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem type="Detail" detailPress="onNavEditarInstituicoes">
+                        <cells>
+                            <Text text="{Instituicoes>ID}"></Text>
+                            <Text text="{Instituicoes>nome}"></Text>
+                            <Text text="{Instituicoes>email}"></Text>
+                            <Text text="{Instituicoes>tipo_ensino}"></Text>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>

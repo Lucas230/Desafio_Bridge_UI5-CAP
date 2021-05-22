@@ -1,0 +1,45 @@
+<mvc:View 
+controllerName="desafiobridge.desafiobridge.controller.ParticipantesConsulta" 
+xmlns:mvc="sap.ui.core.mvc" 
+displayBlock="true" 
+xmlns="sap.m">
+	<Page showHeader="true" title="Consulta de Participantes" titleAlignment="Center">
+        <content>
+            <Table mode="Delete" id="tableParticipantes" delete="onExcluir" items="{path: 'Participantes>/'}">
+                <headerToolbar>
+                    <OverflowToolbar >
+                        <content>
+                            <Title text="Vagas" level="H2" />
+                            <ToolbarSpacer ></ToolbarSpacer>
+                            <SearchField placeholder="Digite o nome de uma Vaga" width="50%" liveChange="onSearch" ></SearchField>
+                        </content>
+                    </OverflowToolbar>
+                </headerToolbar>
+                <columns>
+                    <Column demandPopin="true" minScreenWidth="Desktop">
+                        <Label wrapping="true" text="ID" design="Bold"></Label>
+                    </Column>
+                    <Column demandPopin="true" minScreenWidth="Desktop">
+                        <Label wrapping="true" text="Nome" design="Bold"></Label>
+                    </Column>
+                    <Column demandPopin="true" minScreenWidth="Desktop">
+                        <Label wrapping="true" text="E-mail" design="Bold"></Label>
+                    </Column>
+                    <Column demandPopin="true" minScreenWidth="Desktop">
+                        <Label wrapping="true" text="Nivel de conhecimento" design="Bold"></Label>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem type="Detail" detailPress="onNavEditarParticipante">
+                        <cells>
+                            <Text text="{Participantes>ID}"></Text>
+                            <Text text="{Participantes>nome}"></Text>
+                            <Text text="{Participantes>email}"></Text>
+                            <Text text="{Participantes>conhecimento}"></Text>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>
