@@ -21,6 +21,7 @@ sap.ui.define([
                 // Rota de edição
                 //this.getRouter().getRoute("VagasEditar").attachPatternMatched(this.handleRouteMatchedEditarVaga, this);
             },
+            
 
             // Rota de edição
             handleRouteMatchedEditarVaga: async function(){

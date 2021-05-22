@@ -29,6 +29,10 @@ sap.ui.define([
             // Função do botão de "Cadastro de instituições"
             onNavInstituicoesCadastro: function(){
                 this.getRouter().navTo("InstituicoesCadastro");
-            }
+            },
+
+            onNavParticipantesConsulta: function(){
+                this.getRouter().navTo("ParticipantesConsulta");
+             }
 		});
 	});
