@@ -14,7 +14,7 @@
       ]
     },
     {
-      "name": "Run desafio_bridge-6",
+      "name": "Run desafio_bridge-7",
       "request": "launch",
       "type": "node",
       "cwd": "${workspaceFolder}",
@@ -33,10 +33,10 @@
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "envFile": "${workspaceFolder}/.env6",
+      "envFile": "${workspaceFolder}/.env7",
       "env": {
         "NODE_ENV": "development",
-        "run.config": "{\"handlerId\":\"cap_run_config_handler_id\",\"runnableId\":\"{\\\"projectPath\\\":\\\"/home/user/projects/Desafio_Bridge\\\",\\\"profileName\\\":\\\"development\\\"}\"}"
+        "run.config": "{\"handlerId\":\"cap_run_config_handler_id\",\"runnableId\":\"{\\\"projectPath\\\":\\\"/home/user/projects/desafio_bridge\\\",\\\"profileName\\\":\\\"development\\\"}\"}"
       }
     }
   ]

@@ -32,3 +32,8 @@ mta_archives/
 .env5
 # auto generated wildcard
 .env6
+# auto generated wildcard
+.env7
+
+# added by cds deploy
+default-env.json

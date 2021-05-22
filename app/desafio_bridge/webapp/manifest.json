@@ -205,6 +205,7 @@
                     "clearControlAggregation": false,
                     "viewId": "participantesconsulta",
                     "viewName": "ParticipantesConsulta",
+                    "controlAggregation": "detailPages"
                 },
                 "InstituicoesConsulta": {
                     "viewType": "XML",
