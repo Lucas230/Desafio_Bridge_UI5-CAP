@@ -11,8 +11,7 @@ sap.ui.define([
             onInit: function () {
 
                 var oModelLocal = {
-                    descricao: "",
-                    empresa_ID: ""
+                    empresa_ID: ""                    
                 };
                 this.setModel(new JSONModel(oModelLocal), "Vaga");
 
@@ -26,7 +25,6 @@ sap.ui.define([
             handleRouteMatchedEditarVaga: async function () {
                 var that = this;
                 var ID = this.getRouter().getHashChanger().getHash().split("/")[1];
-                console.log(ID);
                 this.getView().setBusy(true);
                 await
                     $.ajax({
@@ -46,7 +44,6 @@ sap.ui.define([
             onConfirmar: async function () {
                 var oVaga = this.getView().getModel("Vaga").getData();
                 var that = this;
-                console.log(oVaga);
 
                 // Primeiro é validado se a rota que estamos é a rota de 'VagasEditar'
                 // Se for, o botão será responsável por atualizar (PUT) os dados
@@ -78,7 +75,10 @@ sap.ui.define([
                             MessageBox.error("Não foi possível editar a vaga.");
                         }
                     });
-                } else {
+                    //Limpa os campos da edição
+                    this.getView().setModel(new JSONModel(), "Vaga");
+                } 
+                else {
                     this.getView().setBusy(true);
                     // Método POST para salvar os dados 
 
@@ -91,15 +91,15 @@ sap.ui.define([
                         success() {
                             MessageBox.success("Salvo com sucesso!");
                         },
-                        error() {
+                        error(data) {
                             MessageBox.error("Não foi possível salvar a vaga!");
                         }
-                    })
-
+                    });
                     this.getView().setBusy(false);
 
                 }
-
+                //Limpa os campos
+                this.getView().setModel(new JSONModel(), "Vaga");
             },
 
             // Função do botão Cancelar
@@ -108,8 +108,11 @@ sap.ui.define([
                 // Senão, limpa o model 'Vaga'
                 if (this.getRouter().getHashChanger().getHash().search("VagasEditar") === 0) {
                     this.getRouter().navTo("VagasConsulta");
+                    //Limpa os campos
+                    this.getView().setModel(new JSONModel(), "Vaga");
                 } else {
-                    this.getView().setModel("Vaga");
+                    //Limpa os campos
+                    this.getView().setModel(new JSONModel(), "Vaga");
                 }
             }
         });

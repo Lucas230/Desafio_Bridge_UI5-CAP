@@ -10,6 +10,7 @@
                 <Image src="images/logo_final.png" width="100%" height="100%"/>
                 <List>
                     <items>
+                        <StandardListItem title="Cadastro de Empresas" type="Active" press="onNavEmpresasCadastro"/>
                         <StandardListItem title="Cadastro de Vagas" type="Active" press="onNavVagasCadastro"/>
                         <StandardListItem title="Cadastro de Instituições" type="Active" press="onNavInstituicoesCadastro"/>
                         <StandardListItem title="Consulta de Vagas" type="Active" press="onNavVagasConsulta"/>

@@ -15,7 +15,6 @@ sap.ui.define([
 			onInit: function () {
                 this.getRouter().getRoute("VagasConsulta").attachPatternMatched(this.handleRouteMatched, this);
             },
-            
             handleRouteMatched: async function(){
                 var that = this;
                 // Busca todos os Vagas cadastradas (GET)
@@ -24,7 +23,6 @@ sap.ui.define([
                     "url": "/main/VagasSet",
                     "method": "GET",
                     success(data){
-                        console.log(data);
                         that.getView().setModel(new JSONModel(data.value), "Vagas");
                     },
                     error(){
@@ -32,7 +30,6 @@ sap.ui.define([
                     }
                 })
             },
-            
             // Função do botão 'Excluir'
             onExcluir: async function(oEvent){
                 var id = oEvent.getParameter('listItem').getBindingContext("Vagas").getObject().ID; // pega o ID do Vaga selecionado

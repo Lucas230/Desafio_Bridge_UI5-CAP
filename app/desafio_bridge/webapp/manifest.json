@@ -101,6 +101,11 @@
                     "target": ["Menu"]
                 },
                 {
+                    "name": "EmpresasCadastro",
+                    "pattern": "EmpresasCadastro",
+                    "target": ["Menu", "EmpresasCadastro"]
+                },
+                {
                     "name": "VagasCadastro",
                     "pattern": "VagasCadastro",
                     "target": [ "Menu", "VagasCadastro"]
@@ -177,6 +182,14 @@
                     "clearControlAggregation": false,
                     "viewId": "vagasconsulta",
                     "viewName": "VagasConsulta",
+                    "controlAggregation": "detailPages"
+                },
+                "EmpresasCadastro": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "empresascadastro",
+                    "viewName": "EmpresasCadastro",
                     "controlAggregation": "detailPages"
                 }
             }
