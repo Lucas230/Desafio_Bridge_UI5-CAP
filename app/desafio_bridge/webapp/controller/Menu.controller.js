@@ -11,7 +11,10 @@ sap.ui.define([
 			onInit: function () {
 
             },
-            
+            // Função do botão de "Cadastro de empresas"
+            onNavEmpresasCadastro: function(){
+                this.getRouter().navTo("EmpresasCadastro");
+            },
             // Função do botão de "Consulta de Vagas"
             onNavVagasConsulta: function(){
                 this.getRouter().navTo("VagasConsulta");

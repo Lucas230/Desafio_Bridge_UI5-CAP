@@ -7,10 +7,12 @@
   "private": true,
   "dependencies": {
     "@sap/cds": "^4",
+    "@sap/hana-client": "^2.6.61",
     "express": "^4",
-    "@sap/hana-client": "^2.6.61"
+    "hdb": "^0.18.3"
   },
   "devDependencies": {
+    "@sap/hdi-deploy": "4.0.5",
     "@sap/ux-specification": "^1.84.10",
     "sqlite3": "^5.0.2"
   },
@@ -23,7 +25,8 @@
     },
     "requires": {
       "db": {
-        "kind": "sql",
+        "kind": "hana",
+        "model": "*",
         "credentials": {
           "database": "my.db"
         }
