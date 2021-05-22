@@ -131,6 +131,12 @@
                     "target": [ "Menu", "VagasConsulta"]
                 },
                 {
+
+                    "name": "InstituicoesConsulta",
+                    "pattern": "InstituicoesConsulta",
+                    "target": [ "Menu", "InstituicoesConsulta"]
+                },
+                { 
                     "name": "VagasEditar",
                     "pattern": "VagasEditar/{ID}",
                     "target": ["Menu", "VagasCadastro"]
@@ -182,6 +188,14 @@
                     "clearControlAggregation": false,
                     "viewId": "vagasconsulta",
                     "viewName": "VagasConsulta",
+                    "controlAggregation": "detailPages"
+                },
+                "InstituicoesConsulta": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "instituicoesconsulta",
+                    "viewName": "InstituicoesConsulta",
                     "controlAggregation": "detailPages"
                 },
                 "EmpresasCadastro": {

@@ -24,7 +24,7 @@
                                     <Label text="Nome" design="Bold"></Label>
                                 </form:label>
                                 <form:fields>
-                                    <TextArea value="{Instituicoes>/nome}"/>
+                                    <TextArea value="{Instituicao>/nome}"/>
                                 </form:fields>
                             </form:FormElement>
 
@@ -33,7 +33,7 @@
                                     <Label text="E-mail" design="Bold"></Label>
                                 </form:label>
                                 <form:fields>
-                                    <TextArea value="{Instituicoes>/e-mail}"/>
+                                    <TextArea value="{Instituicao>/email}"/>
                                 </form:fields>
                             </form:FormElement>
 
@@ -42,7 +42,7 @@
                                     <Label text="Tipo de ensino" design="Bold"></Label>
                                 </form:label>
                                 <form:fields>
-                                    <ComboBox selectedKey="{Instituicoes>/tipo_ensino}">
+                                    <ComboBox selectedKey="{Instituicao>/tipo_ensino}">
                                         <items>
                                             <core:Item key="Ensino Médio Público" text="Ensino Médio Público" />
                                              <core:Item key="Ensino Médio Particular" text="Ensino Médio Particular" />
