@@ -101,6 +101,11 @@
                     "target": ["Menu"]
                 },
                 {
+                    "name": "EmpresasCadastro",
+                    "pattern": "EmpresasCadastro",
+                    "target": ["Menu", "EmpresasCadastro"]
+                },
+                {
                     "name": "VagasCadastro",
                     "pattern": "VagasCadastro",
                     "target": [ "Menu", "VagasCadastro"]
@@ -134,6 +139,16 @@
                     "name": "EditarParticipante",
                     "pattern": "EditarParticipante/{id}",
                     "target": ["Menu", "ParticipanteCadastro"]
+                },
+                { 
+                    "name": "InstituicoesConsulta",
+                    "pattern": "InstituicoesConsulta",
+                    "target": [ "Menu", "InstituicoesConsulta"]
+                },
+                { 
+                    "name": "VagasEditar",
+                    "pattern": "VagasEditar/{ID}",
+                    "target": ["Menu", "VagasCadastro"]
                 }
             ],
             "targets": {
@@ -190,6 +205,21 @@
                     "clearControlAggregation": false,
                     "viewId": "participantesconsulta",
                     "viewName": "ParticipantesConsulta",
+                },
+                "InstituicoesConsulta": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "instituicoesconsulta",
+                    "viewName": "InstituicoesConsulta",
+                    "controlAggregation": "detailPages"
+                },
+                "EmpresasCadastro": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "empresascadastro",
+                    "viewName": "EmpresasCadastro",
                     "controlAggregation": "detailPages"
                 }
             }
