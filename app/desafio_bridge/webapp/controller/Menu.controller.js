@@ -25,6 +25,11 @@ sap.ui.define([
                 this.getRouter().navTo("VagasCadastro");
             },
 
+            // Função do botão de "Consulta de Empresas"
+            onNavEmpresasConsulta: function(){
+                this.getRouter().navTo("EmpresasConsulta");
+            },
+
             onNavParticipanteCadastro: function(){
                 console.log("partici");
                 this.getRouter().navTo("ParticipanteCadastro");
