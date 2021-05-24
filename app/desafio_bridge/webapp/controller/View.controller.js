@@ -9,7 +9,8 @@ sap.ui.define([
 
 		return Controller.extend("desafiobridge.desafiobridge.controller.View", {
 			onInit: function () {
-               
+               this.getOwnerComponent()._oSplitApp = this.byId("app");
+                var oSplitApp = this.getOwnerComponent()._oSplitApp;
 			}
 		});
 	});

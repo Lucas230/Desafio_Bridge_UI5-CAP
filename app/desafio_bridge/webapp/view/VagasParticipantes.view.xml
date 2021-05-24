@@ -1,0 +1,30 @@
+<mvc:View 
+    controllerName="desafiobridge.desafiobridge.controller.VagasParticipantes" 
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns="sap.m"
+    xmlns:layout="sap.ui.layout"
+>
+    <Page showHeader="true" title="Consulta de Vagas" titleAlignment="Center">
+        <layout:Grid class="sapUiResponsiveMargin" 
+			defaultSpan="L12 M12 S12">
+			<layout:Grid
+				id="content"
+				defaultSpan="L2 M2 S2"
+            	position="Left" 
+            	width="100%" 
+            	containerQuery="false" 
+            	visible="true" 
+            	class="sapUiSmallMarginTop" 
+            	content="{Vagas>/}" >
+				<GenericTile 
+					class="sapUiTinyMarginTop TileImageNew"
+					press="onNavVerVaga"
+					header="({Vagas>empresa/nome}) {Vagas>descricao}">
+					<TileContent footer="Nível {Vagas>nivel_conhecimento}">
+						 <ImageContent class="AjusteErroListForm" src="/desafio_bridge/webapp/images/{Vagas>empresa/nome}.png"/>
+					</TileContent>
+				</GenericTile>
+			</layout:Grid>
+		</layout:Grid>
+    </Page>
+</mvc:View>

@@ -1,0 +1,72 @@
+<mvc:View xmlns:core="sap.ui.core" 
+    controllerName="desafiobridge.desafiobridge.controller.VagasParticipantes"
+    xmlns:form="sap.ui.layout.form" 
+    xmlns:mvc="sap.ui.core.mvc" 
+    displayBlock="true" 
+    xmlns="sap.m"
+> 
+
+	<Page showHeader="true" title="Consulta da vaga" titleAlignment="Center">
+        <content>
+            <form:Form>
+                <form:layout>
+                     <form:ColumnLayout columnsL="1" columnsM="1" columnsXL="1"></form:ColumnLayout>
+                </form:layout>
+                <form:formContainers>
+                    <form:FormContainer>
+
+                        <form:formElements>
+                            <form:FormElement>
+                                <form:fields>
+                                    <TextArea class="vervagatext" value="Nome: {Vaga>/empresa/nome}" editable="false"/>
+                                </form:fields>
+                            </form:FormElement>
+                        </form:formElements>
+
+                        <form:formElements>
+                            <form:FormElement>
+                                <form:fields>
+                                    <TextArea class="vervagatext" value="Email: {Vaga>/empresa/email}" editable="false"/>
+                                </form:fields>
+                            </form:FormElement>
+                        </form:formElements>
+
+                        <form:formElements>
+                            <form:FormElement>
+                                <form:fields>
+                                    <TextArea class="vervagatext" value="Descrição da Vaga: {Vaga>/descricao}" editable="false"/>
+                                </form:fields>
+                            </form:FormElement>
+                        </form:formElements>
+
+                        <form:formElements>
+                            <form:FormElement>
+                                <form:fields>
+                                    <TextArea class="vervagatext" value="Requisitos: {Vaga>/requisitos}" editable="false"/>
+                                </form:fields>
+                            </form:FormElement>
+                        </form:formElements>
+
+                        <form:formElements>
+                            <form:FormElement>
+                                <form:fields>
+                                    <TextArea class="vervagatext" value="Nível de conhecimento exigido: {Vaga>/nivel_conhecimento}" editable="false"/>
+                                </form:fields>
+                            </form:FormElement>
+                        </form:formElements>
+
+                    </form:FormContainer>
+                    
+                </form:formContainers>
+                
+            </form:Form>
+        </content>
+		<footer>
+           <OverflowToolbar >
+                <ToolbarSpacer/>
+                <Button text="Voltar" type="Emphasized" press="onVoltar"/>
+            </OverflowToolbar>
+        </footer>
+	</Page>
+	
+</mvc:View>
