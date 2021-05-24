@@ -17,9 +17,6 @@ xmlns="sap.m">
                 </headerToolbar>
                 <columns>
                     <Column demandPopin="true" minScreenWidth="Desktop">
-                        <Label wrapping="true" text="ID" design="Bold"></Label>
-                    </Column>
-                    <Column demandPopin="true" minScreenWidth="Desktop">
                         <Label wrapping="true" text="Nome" design="Bold"></Label>
                     </Column>
                     <Column demandPopin="true" minScreenWidth="Desktop">
@@ -32,7 +29,6 @@ xmlns="sap.m">
                 <items>
                     <ColumnListItem type="Detail" detailPress="onNavEditarInstituicoes">
                         <cells>
-                            <Text text="{Instituicoes>ID}"></Text>
                             <Text text="{Instituicoes>nome}"></Text>
                             <Text text="{Instituicoes>email}"></Text>
                             <Text text="{Instituicoes>tipo_ensino}"></Text>

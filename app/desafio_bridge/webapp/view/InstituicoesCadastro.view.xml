@@ -24,7 +24,7 @@
                                     <Label text="Nome" design="Bold"></Label>
                                 </form:label>
                                 <form:fields>
-                                    <TextArea value="{Instituicao>/nome}"/>
+                                    <Input value="{Instituicao>/nome}"/>
                                 </form:fields>
                             </form:FormElement>
 
@@ -33,7 +33,7 @@
                                     <Label text="E-mail" design="Bold"></Label>
                                 </form:label>
                                 <form:fields>
-                                    <TextArea value="{Instituicao>/email}"/>
+                                    <Input value="{Instituicao>/email}"/>
                                 </form:fields>
                             </form:FormElement>
 

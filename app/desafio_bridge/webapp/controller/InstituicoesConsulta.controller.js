@@ -35,7 +35,7 @@ sap.ui.define([
             
             // Função do botão 'Excluir'
             onExcluir: async function(oEvent){
-                var id = oEvent.getParameter('listItem').getBindingContext("Instituicoes").getObject().ID; // pega o ID da Instituicaos elecionado
+                var id = oEvent.getParameter('listItem').getBindingContext("Instituicoes").getObject().id; // pega o ID da Instituicaos elecionado
                 this.getView().setBusy(true);
                 // Método DELETE para deletar um registro 
                 await
@@ -57,8 +57,8 @@ sap.ui.define([
 
             // Função do botão editar da tabela
             onNavEditarInstituicoes: function(oEvent){
-                var InstituicoesId = oEvent.getSource().getBindingContext("Instituicoes").getObject().id; // pega o id da Instituicao selecionado
-                this.getRouter().navTo("EditarInstituicoes", {id: VagaId}); // chama a rota de edição passando o id da Instituicao selecionado
+                var InstituicaoId = oEvent.getSource().getBindingContext("Instituicoes").getObject().ID; // pega o id da Instituicao selecionado
+                this.getRouter().navTo("EditarInstituicoes", {ID: InstituicaoId}); // chama a rota de edição passando o id da Instituicao selecionado
             },
 
             // Função do campo de busca (SearchField)

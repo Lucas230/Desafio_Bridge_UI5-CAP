@@ -80,6 +80,24 @@
       "problemMatcher": [
         "$cap-hdi-bind-handler"
       ]
+    },
+    {
+      "label": "cds-deploy-to-hana-Desafio_Bridge-desafio_bridge-db",
+      "type": "shell",
+      "command": "cds",
+      "args": [
+        "deploy",
+        "--to",
+        "hana:desafio_bridge-db",
+        "--no-save"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "isBackground": true,
+      "problemMatcher": [
+        "$cap-hdi-bind-handler"
+      ]
     }
   ]
 }
