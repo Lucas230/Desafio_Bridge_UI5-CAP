@@ -98,7 +98,7 @@
                 {
                     "name": "Menu",
                     "pattern": "",
-                    "target": ["Menu"]
+                    "target": ["Menu", "EmpresasCadastro"]
                 },
                 {
                     "name": "EmpresasCadastro",
@@ -149,6 +149,16 @@
                     "name": "VagasEditar",
                     "pattern": "VagasEditar/{ID}",
                     "target": ["Menu", "VagasCadastro"]
+                },
+                { 
+                    "name": "VagasParticipantes",
+                    "pattern": "VagasParticipantes",
+                    "target": ["Menu", "VagasParticipantes"]
+                },
+                { 
+                    "name": "VerVaga",
+                    "pattern": "VerVaga/{ID}",
+                    "target": ["Menu", "VerVaga"]
                 },
                 {
                     "name": "EmpresasConsulta",
@@ -232,6 +242,21 @@
                     "viewId": "empresascadastro",
                     "viewName": "EmpresasCadastro",
                     "controlAggregation": "detailPages"
+                },
+                "VagasParticipantes": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "vagasparticipante",
+                    "viewName": "VagasParticipantes",
+                    "controlAggregation": "detailPages"
+                },
+                "VerVaga": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "vervaga",
+                    "viewName": "VerVaga",
                 },
                 "EmpresasConsulta": {
                     "viewType": "XML",

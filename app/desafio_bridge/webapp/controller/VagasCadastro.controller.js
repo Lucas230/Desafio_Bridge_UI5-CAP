@@ -7,20 +7,38 @@ sap.ui.define([
     function (BaseController, JSONModel, MessageBox) {
         "use strict";
 
-        return BaseController.extend("desafiobridge.desafiobridge.VagasCadastro", {
+        return BaseController.extend("desafiobridge.desafiobridge.controller.VagasCadastro", {
             onInit: function () {
 
                 var oModelLocal = {
-                    empresa_ID: ""                    
+                    empresa_ID: ""
                 };
                 this.setModel(new JSONModel(oModelLocal), "Vaga");
+
+                this._getDadosEmpresa();
 
                 // Rota de cadastro
                 this.getRouter().getRoute("VagasCadastro").attachPatternMatched(this.handleRouteMatched, this);
                 // Rota de edição
                 this.getRouter().getRoute("VagasEditar").attachPatternMatched(this.handleRouteMatchedEditarVaga, this);
             },
-            
+
+            _getDadosEmpresa: async function () {
+                var that = this;
+                var ID = this.getRouter().getHashChanger().getHash().split("/")[1];
+                await
+                    $.ajax({
+                        "url": "/main/EmpresasSet",
+                        "method": "GET",
+                        success(data) {
+                            that.getView().setModel(new JSONModel(data.value), "EmpresaList");
+                            // salva o retorno da API (data) em um Model chamado 'Empresa'
+                        },
+                        error() {
+                            MessageBox.error("Não foi possível buscar Empresas.") //Se der erro de API, exibe uma mensagem ao usuário
+                        }
+                    });
+            },
 
             // Rota de edição
             handleRouteMatchedEditarVaga: async function () {
@@ -78,7 +96,7 @@ sap.ui.define([
                     });
                     //Limpa os campos da edição
                     this.getView().setModel(new JSONModel(), "Vaga");
-                } 
+                }
                 else {
                     this.getView().setBusy(true);
                     // Método POST para salvar os dados 

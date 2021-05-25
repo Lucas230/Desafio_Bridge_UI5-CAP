@@ -1,1 +1,15 @@
 /* Enter your custom styles here */
+
+.vervagatext div{
+    border-radius: 10px!important;
+    border: 1px solid #06488a!important;
+}
+.vervagatext textarea{
+    
+    font-size: 18px;
+    border-radius: 10px!important;
+    border: 1px solid #06488a!important;
+
+}  
+
+
