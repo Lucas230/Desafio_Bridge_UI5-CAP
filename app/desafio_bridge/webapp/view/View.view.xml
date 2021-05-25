@@ -3,6 +3,6 @@
     xmlns:mvc="sap.ui.core.mvc"
     displayBlock="true"
     xmlns="sap.m">
-		<SplitApp id="app">
+		<SplitApp id="app" mode="HideMode">
 		</SplitApp>
 </mvc:View>

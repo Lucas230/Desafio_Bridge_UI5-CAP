@@ -11,42 +11,42 @@ sap.ui.define([
 	function (BaseController, JSONModel, MessageBox, Filter, FilterOperator) {
 		"use strict";
 
-		return BaseController.extend("desafiobridge.desafiobridge.InstituicoesConsulta", {
+		return BaseController.extend("desafiobridge.desafiobridge.EmpresasConsulta", {
 			onInit: function () {
-                this.getRouter().getRoute("InstituicoesConsulta").attachPatternMatched(this.handleRouteMatched, this);
+                this.getRouter().getRoute("EmpresasConsulta").attachPatternMatched(this.handleRouteMatched, this);
 
             },
             
             handleRouteMatched: async function(){
                 var that = this;
-                // Busca todos as instituições cadastradas (GET)
+                // Busca todos os Empresas cadastradas (GET)
                 await
                 $.ajax({
-                    "url": "/main/InstituicoesSet",
+                    "url": "/main/EmpresasSet",
                     "method": "GET",
                     success(data){
-                        that.getView().setModel(new JSONModel(data.value), "Instituicoes");
+                        that.getView().setModel(new JSONModel(data.value), "Empresas");
                     },
                     error(){
-                        MessageBox.error("Não foi possível buscar a Instituição.");
+                        MessageBox.error("Não foi possível buscar as Empresas.");
                     }
                 })
             },
             
             // Função do botão 'Excluir'
             onExcluir: async function(oEvent){
-                var id = oEvent.getParameter('listItem').getBindingContext("Instituicoes").getObject().id; // pega o ID da Instituicaos elecionado
+                var id = oEvent.getParameter('listItem').getBindingContext("Empresas").getObject().ID; // pega o ID do Empresa selecionado
                 this.getView().setBusy(true);
                 // Método DELETE para deletar um registro 
                 await
                 $.ajax({
-                    "url": "/main/InstituicoesSet("+ id +")",
+                    "url": "/main/EmpresasSet("+ id +")",
                     "method": "DELETE",
                     success(data){
                         MessageBox.success("Excluído com sucesso!");
                     },
                     error(){
-                        MessageBox.error("Não foi possível excluir a Instituição")
+                        MessageBox.error("Não foi possível excluir o Empresa.")
                     }
 
                 });
@@ -56,9 +56,9 @@ sap.ui.define([
             },
 
             // Função do botão editar da tabela
-            onNavEditarInstituicoes: function(oEvent){
-                var InstituicaoId = oEvent.getSource().getBindingContext("Instituicoes").getObject().ID; // pega o id da Instituicao selecionado
-                this.getRouter().navTo("EditarInstituicoes", {ID: InstituicaoId}); // chama a rota de edição passando o id da Instituicao selecionado
+            onNavEditarEmpresa: function(oEvent){
+                var EmpresaId = oEvent.getSource().getBindingContext("Empresas").getObject().ID; // pega o id do Empresa selecionado
+                this.getRouter().navTo("EditarEmpresa", {ID: EmpresaId}); // chama a rota de edição passando o id do Empresa selecionado
             },
 
             // Função do campo de busca (SearchField)
@@ -70,7 +70,7 @@ sap.ui.define([
                     aFilters.push(filter);
                 }
 
-                var oList = this.byId("tableInstituicoes");
+                var oList = this.byId("tableEmpresas");
                 var oBinding = oList.getBinding("items");
                 oBinding.filter(aFilters, "Application");
             }

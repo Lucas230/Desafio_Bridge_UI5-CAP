@@ -14,7 +14,7 @@ sap.ui.define([
                 // Rota de cadastro
                 this.getRouter().getRoute("InstituicoesCadastro").attachPatternMatched(this.handleRouteMatched, this);
                  // Rota de edição
-                 //this.getRouter().getRoute("InstituicoesCadastro").attachPatternMatched(this.handleRouteMatchedEditarInstituicoesCadastro, this);
+                this.getRouter().getRoute("EditarInstituicoes").attachPatternMatched(this.handleRouteMatchedEditarInstituicoesCadastro, this);
                 var oModelLocal = {
                     nome:"",
                     email:"",
@@ -30,12 +30,13 @@ sap.ui.define([
                 var that = this;
                 var id = this.getRouter().getHashChanger().getHash().split("/")[1];
                 this.getView().setBusy(true);
+               
                 await 
                 $.ajax({
-                    "url": `desafiobridge.desafiobridge/${id}`, // concatena a URL com o ID
+                    "url": "/main/InstituicoesSet("+ id +")", // concatena a URL com o ID
                     "method": "GET",
                     success(data) {
-                        that.getView().setModel(new JSONModel(data), "Instituicoes"); // salva o retorno da API (data) em um Model chamado 'Vaga'
+                        that.getView().setModel(new JSONModel(data), "Instituicao"); // salva o retorno da API (data) em um Model chamado 'Vaga'
                     },
                     error() {
                         MessageBox.error("Não foi possível buscar as Instituicoes.") //Se der erro de API, exibe uma mensagem ao usuário
@@ -48,14 +49,15 @@ sap.ui.define([
             onConfirmar: async function(){
                 var oInstituicoes = this.getView().getModel("Instituicao").getData();
                 var that = this;
+                console.log(oInstituicoes)
                
 
                 // Primeiro é validado se a rota que estamos é a rota de 'instituicoesEditar'
                 // Se for, o botão será responsável por atualizar (PUT) os dados
                 // Senão, irá criar (POST) um novo registro na tabela
-                if(this.getRouter().getHashChanger().getHash().search("InstituicoesEditar") === 0){
+                if(this.getRouter().getHashChanger().getHash().search("EditarInstituicoes") === 0){
 
-                    await $.ajax(`/main/InstituicoesSet/${oInstituicoes.id}`, { // Concatena o ID da instituicao selecionado na url
+                    await $.ajax("/main/InstituicoesSet("+ oInstituicoes.ID +")", { // Concatena o ID da instituicao selecionado na url
                     method: "PUT",
                     headers: {
                         "Content-Type": "application/json"
@@ -63,8 +65,8 @@ sap.ui.define([
                     // Cria a estrutura dos dados para enviar para API
                     data: JSON.stringify({
                         "nome": oInstituicoes.nome,
-                        "E-mail": oInstituicoes.email,
-                        "Tipo de ensino": oInstituicoes.tipo_ensino
+                        "email": oInstituicoes.email,
+                        "tipo_ensino": oInstituicoes.tipo_ensino
                     }),
                     success() {
                         // Se a api retornar sucesso, exibe uma mensagem para o usuário e navega para a tela de "InstituicaoConsulta"
@@ -79,6 +81,8 @@ sap.ui.define([
                         MessageBox.error("Não foi possível editar a Instituição.");
                     }
                 });
+                //Limpa os campos da edição
+                    this.getView().setModel(new JSONModel(), "Instituicao");
 
                 }else{
                     this.getView().setBusy(true);
@@ -94,24 +98,27 @@ sap.ui.define([
                             MessageBox.success("Salvo com sucesso!");
                         },
                         error(){
-                            console.log(oInstituicoes)
                             MessageBox.error("Não foi possível salvar a instituição!");
                         }
-                    })
-
+                    });
                     this.getView().setBusy(false);
 
                 }
+                //Limpa os campos
+                this.getView().setModel(new JSONModel(), "Instituicao");
             },
 
             // Função do botão Cancelar
             onCancelar: function(){
-                // Se a rota for a de "InstituicaoEditar", navega para a tela de Consuta
+                // Se a rota for a de "EditarInstituicoes", navega para a tela de Consuta
                 // Senão, limpa o model 'Instituicao'
-                if(this.getRouter().getHashChanger().getHash().search("InstituicoesEditar") === 0){
+                if(this.getRouter().getHashChanger().getHash().search("EditarInstituicoes") === 0){
                     this.getRouter().navTo("InstituicoesConsulta");
+                    //Limpa os campos
+                this.getView().setModel(new JSONModel(), "Instituicao");
                 }else{
-                    this.getView().setModel("Instituicao");
+                    //Limpa os campos
+                    this.getView().setModel(new JSONModel(), "Instituicao");    
                 }
             }
 		});

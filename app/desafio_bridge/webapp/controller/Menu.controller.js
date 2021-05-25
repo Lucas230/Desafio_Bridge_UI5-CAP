@@ -25,12 +25,19 @@ sap.ui.define([
                 this.getRouter().navTo("VagasCadastro");
             },
 
+            // Função do botão de "Consulta de Empresas"
+            onNavEmpresasConsulta: function(){
+                this.getRouter().navTo("EmpresasConsulta");
+            },
+
             onNavParticipanteCadastro: function(){
+                console.log("partici");
                 this.getRouter().navTo("ParticipanteCadastro");
              },
             
             // Função do botão de "Cadastro de instituições"
             onNavInstituicoesCadastro: function(){
+                console.log("Insti");
                 this.getRouter().navTo("InstituicoesCadastro");
             },
             onNavParticipantesConsulta: function(){
@@ -42,6 +49,9 @@ sap.ui.define([
             },
             onNavLoginParticipante: function(){
                 this.getRouter().navTo("LoginParticipante");
+            },
+            onNavVagasParticipantes: function(){
+                this.getRouter().navTo("VagasParticipantes");
             }
 		});
 	});

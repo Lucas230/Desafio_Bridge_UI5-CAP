@@ -11,31 +11,27 @@ xmlns="sap.m">
                         <content>
                             <Title text="Vagas" level="H2" />
                             <ToolbarSpacer ></ToolbarSpacer>
-                            <SearchField placeholder="Digite o nome de uma Vaga" width="50%" liveChange="onSearch" ></SearchField>
+                            <SearchField placeholder="Digite o nome de uma empresa" width="50%" liveChange="onSearch" ></SearchField>
                         </content>
                     </OverflowToolbar>
                 </headerToolbar>
                 <columns>
                     <Column demandPopin="true" minScreenWidth="Desktop">
-                        <Label wrapping="true" text="ID" design="Bold"></Label>
+                        <Label wrapping="true" text="Descrição da vaga" design="Bold"></Label>
                     </Column>
                     <Column demandPopin="true" minScreenWidth="Desktop">
-                        <Label wrapping="true" text="Descrição" design="Bold"></Label>
+                        <Label wrapping="true" text="Nome da empresa" design="Bold"></Label>
                     </Column>
                     <Column demandPopin="true" minScreenWidth="Desktop">
                         <Label wrapping="true" text="Nivel de conhecimento" design="Bold"></Label>
-                    </Column>
-                    <Column demandPopin="true" minScreenWidth="Desktop">
-                        <Label wrapping="true" text="Empresa" design="Bold"></Label>
                     </Column>
                 </columns>
                 <items>
                     <ColumnListItem type="Detail" detailPress="onNavEditarVaga">
                         <cells>
-                            <Text text="{Vagas>ID}"></Text>
                             <Text text="{Vagas>descricao}"></Text>
+                            <Text text="{Vagas>empresa/nome}"></Text>
                             <Text text="{Vagas>nivel_conhecimento}"></Text>
-                            <Text text="{Vagas>empresa_ID}"></Text>
                         </cells>
                     </ColumnListItem>
                 </items>

@@ -11,16 +11,17 @@ sap.ui.define([
 	function (BaseController, JSONModel, MessageBox, Filter, FilterOperator) {
 		"use strict";
 
-		return BaseController.extend("desafiobridge.desafiobridge.VagasConsulta", {
+		return BaseController.extend("desafiobridge.desafiobridge.controller.VagasConsulta", {
 			onInit: function () {
                 this.getRouter().getRoute("VagasConsulta").attachPatternMatched(this.handleRouteMatched, this);
             },
+
             handleRouteMatched: async function(){
                 var that = this;
                 // Busca todos os Vagas cadastradas (GET)
                 await
                 $.ajax({
-                    "url": "/main/VagasSet",
+                    "url": "/main/VagasSet?$expand=empresa",
                     "method": "GET",
                     success(data){
                         that.getView().setModel(new JSONModel(data.value), "Vagas");
@@ -62,7 +63,7 @@ sap.ui.define([
                 var aFilters = [];
                 var sQuery = oEvent.getSource().getValue();
                 if (sQuery && sQuery.length > 0) {
-                    var filter = new Filter("nome", FilterOperator.Contains, sQuery);
+                    var filter = new Filter("descricao", FilterOperator.Contains, sQuery);
                     aFilters.push(filter);
                 }
 

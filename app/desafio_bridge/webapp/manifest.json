@@ -98,7 +98,7 @@
                 {
                     "name": "Menu",
                     "pattern": "",
-                    "target": ["Menu"]
+                    "target": ["Menu", "EmpresasCadastro"]
                 },
                 {
                     "name": "EmpresasCadastro",
@@ -122,7 +122,7 @@
                 },
                 {
                     "name": "EditarInstituicoes",
-                    "pattern": "EditarInstituicoes/{id}",
+                    "pattern": "EditarInstituicoes/{ID}",
                     "target": ["Menu", "InstituicoesCadastro"]
                 },
                 {
@@ -154,6 +154,26 @@
                     "name": "LoginParticipante",
                     "pattern": "LoginParticipante",
                     "target": ["Menu", "LoginParticipante"]
+                },
+                { 
+                    "name": "VagasParticipantes",
+                    "pattern": "VagasParticipantes",
+                    "target": ["Menu", "VagasParticipantes"]
+                },
+                { 
+                    "name": "VerVaga",
+                    "pattern": "VerVaga/{ID}",
+                    "target": ["Menu", "VerVaga"]
+                },
+                {
+                    "name": "EmpresasConsulta",
+                    "pattern": "EmpresasConsulta",
+                    "target": [ "Menu", "EmpresasConsulta"]
+                },
+                {
+                    "name": "EditarEmpresa",
+                    "pattern": "EditarEmpresa/{ID}",
+                    "target": ["Menu", "EmpresasCadastro"]
                 }
             ],
             "targets": {
@@ -234,6 +254,28 @@
                     "clearControlAggregation": false,
                     "viewId": "loginparticipante",
                     "viewName": "LoginParticipante",
+                },
+                "VagasParticipantes": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "vagasparticipante",
+                    "viewName": "VagasParticipantes",
+                    "controlAggregation": "detailPages"
+                },
+                "VerVaga": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "vervaga",
+                    "viewName": "VerVaga",
+                },
+                "EmpresasConsulta": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "empresasconsulta",
+                    "viewName": "EmpresasConsulta",
                     "controlAggregation": "detailPages"
                 }
             }
