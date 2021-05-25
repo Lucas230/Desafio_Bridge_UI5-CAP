@@ -43,6 +43,9 @@ sap.ui.define([
                             aCPF = data.value.map((element) => {
                                 return element.cpf;
                             });
+                            if(aCPF.length==0){
+                                aCPF = null;
+                            }
 
                             // Aqui vai existir a array CPF
                             
@@ -155,22 +158,10 @@ sap.ui.define([
                             this.getView().setModel(new JSONModel(), "Participante");
                         }
                         else {
-                            console.log("testeRafinh")
                             this._getCpf (async(aCPF)  => {
-                                // Aqui dentro vai existir aquela array cpf
-                                for(var x=0; x<aCPF.length;x++){
-                                    console.log(aCPF[x] +"----"+oParticipante.cpf);
-                                    if(oParticipante.cpf == aCPF[x]){
-                                        MessageBox.error("CPF já cadastrado", {
-                                            onClose: function () {
-                                                that.getRouter().navTo("LoginParticipante");
-                                            }
-                                        });
-                                        return;
-                                    }
-                                    else if(x == aCPF.length-1){
-                                        
-                                        this.getView().setBusy(true);
+                                if(aCPF == null){
+
+                                    this.getView().setBusy(true);
                                         // Método POST para salvar os dados 
                                         await $.ajax("/main/ParticipantesSet", {
                                             method: "POST",
@@ -201,6 +192,53 @@ sap.ui.define([
 
                                         this.getView().setBusy(false);
                                         return;
+                                }
+                                else{
+                                // Aqui dentro vai existir aquela array cpf
+                                    for(var x=0; x<aCPF.length;x++){
+                                        console.log(aCPF[x] +"----"+oParticipante.cpf);
+                                        if(oParticipante.cpf == aCPF[x]){
+                                            MessageBox.error("CPF já cadastrado", {
+                                                onClose: function () {
+                                                    that.getRouter().navTo("LoginParticipante");
+                                                }
+                                            });
+                                            return;
+                                        }
+                                        else if(x == aCPF.length-1){
+                                            
+                                            this.getView().setBusy(true);
+                                            // Método POST para salvar os dados 
+                                            await $.ajax("/main/ParticipantesSet", {
+                                                method: "POST",
+                                                headers: {
+                                                    "Content-Type": "application/json"
+                                                },
+                                                data: JSON.stringify({
+                                                    "conhecimento": oParticipante.conhecimento,
+                                                    "cpf": oParticipante.cpf,
+                                                    "curso": oParticipante.curso,
+                                                    "deficiencia": oParticipante.deficiencia,
+                                                    "email": oParticipante.email,
+                                                    "escolaridade": oParticipante.escolaridade,
+                                                    "instituicao_ID": oParticipante.instituicao_ID,
+                                                    "nome": oParticipante.nome,
+                                                    "senha": oParticipante.senha,
+                                                    "sexo": oParticipante.sexo,
+                                                    "telefone": oParticipante.telefone
+                                                    
+                                                }),
+                                                success() {
+                                                    MessageBox.success("Salvo com sucesso!");
+                                                },
+                                                error() {
+                                                    MessageBox.error("Não foi possível salvar o Participante!");
+                                                }
+                                            })
+
+                                            this.getView().setBusy(false);
+                                            return;
+                                        }
                                     }
                                 }
                             });
