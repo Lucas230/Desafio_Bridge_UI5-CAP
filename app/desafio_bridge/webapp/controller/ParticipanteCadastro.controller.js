@@ -169,7 +169,6 @@ sap.ui.define([
                                         return;
                                     }
                                     else if(x == aCPF.length-1){
-                                        MessageBox.success("Certo");
                                         
                                         this.getView().setBusy(true);
                                         // Método POST para salvar os dados 
