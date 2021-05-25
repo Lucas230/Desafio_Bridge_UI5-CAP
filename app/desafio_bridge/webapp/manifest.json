@@ -254,6 +254,7 @@
                     "clearControlAggregation": false,
                     "viewId": "loginparticipante",
                     "viewName": "LoginParticipante",
+                    "controlAggregation": "detailPages"
                 },
                 "VagasParticipantes": {
                     "viewType": "XML",
@@ -269,6 +270,7 @@
                     "clearControlAggregation": false,
                     "viewId": "vervaga",
                     "viewName": "VerVaga",
+                    "controlAggregation": "detailPages"
                 },
                 "EmpresasConsulta": {
                     "viewType": "XML",

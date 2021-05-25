@@ -30,7 +30,6 @@ sap.ui.define([
 
             _getCpf: async function (handleFunction) {
                 var that = this;
-                var ID = this.getRouter().getHashChanger().getHash().split("/")[1];
                 await
                     $.ajax({
                         "url": "/main/ParticipantesSet",
@@ -156,6 +155,7 @@ sap.ui.define([
                             this.getView().setModel(new JSONModel(), "Participante");
                         }
                         else {
+                            console.log("testeRafinh")
                             this._getCpf (async(aCPF)  => {
                                 // Aqui dentro vai existir aquela array cpf
                                 for(var x=0; x<aCPF.length;x++){

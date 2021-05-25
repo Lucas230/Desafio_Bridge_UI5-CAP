@@ -44,7 +44,7 @@
                                     <Label text="Senha" design="bold"></Label>
                                 </form:label>
                                 <form:fields>
-                                    <Input value="{Empresa>/senha}"> </Input>
+                                    <Input type="Password" value="{Empresa>/senha}"> </Input>
                                 </form:fields>
                             </form:FormElement>
 
