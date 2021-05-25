@@ -20,10 +20,10 @@
                         <form:formElements>
                             <form:FormElement >
                                 <form:label>
-                                <Label text="Descrição" design="Bold"></Label>
+                                    <Label text="Descrição" design="Bold"></Label>
                                 </form:label>
                                 <form:fields>
-                                <TextArea value="{Vaga>/descricao}"/>
+                                    <TextArea value="{Vaga>/descricao}"/>
                                 </form:fields>
                             </form:FormElement>
 

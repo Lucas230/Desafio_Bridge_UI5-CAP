@@ -63,6 +63,7 @@
         </content>
 		<footer>
            <OverflowToolbar >
+                <Image width="4%" src="/desafio_bridge/webapp/images/BB_logo.png"/>
                 <ToolbarSpacer/>
                 <Button text="Voltar" type="Emphasized" press="onVoltar"/>
             </OverflowToolbar>
