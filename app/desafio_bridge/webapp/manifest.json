@@ -150,6 +150,11 @@
                     "pattern": "VagasEditar/{ID}",
                     "target": ["Menu", "VagasCadastro"]
                 },
+                {
+                    "name": "LoginParticipante",
+                    "pattern": "LoginParticipante",
+                    "target": ["Menu", "LoginParticipante"]
+                },
                 { 
                     "name": "VagasParticipantes",
                     "pattern": "VagasParticipantes",
@@ -242,6 +247,13 @@
                     "viewId": "empresascadastro",
                     "viewName": "EmpresasCadastro",
                     "controlAggregation": "detailPages"
+                },
+                "LoginParticipante": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "loginparticipante",
+                    "viewName": "LoginParticipante",
                 },
                 "VagasParticipantes": {
                     "viewType": "XML",
