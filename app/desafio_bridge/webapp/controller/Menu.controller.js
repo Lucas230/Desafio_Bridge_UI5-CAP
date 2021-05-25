@@ -40,5 +40,8 @@ sap.ui.define([
             onNavInstituicoesConsulta: function(){
                 this.getRouter().navTo("InstituicoesConsulta");
             },
+            onNavLoginParticipante: function(){
+                this.getRouter().navTo("LoginParticipante");
+            }
 		});
 	});

@@ -88,10 +88,21 @@
                                 <form:fields>
                                     <ComboBox selectedKey="{Participante>/escolaridade}" placeholder="Escolaridade">
                                         <items>
-                                            <core:Item key="Nenhum" text="Nenhum" />
-                                            <core:Item key="Básico" text="Básico" />
-                                            <core:Item key="Intermediário" text="Intermediário" />
-                                            <core:Item key="Avançado" text="Avançado" />
+                                            <core:Item key="Ensino Fundamental (1o. Grau) interrompido" text="Ensino Fundamental (1o. Grau) interrompido" />
+                                            <core:Item key="Ensino Fundamental (1o. Grau) cursando" text="Ensino Fundamental (1o. Grau) cursando" />
+                                            <core:Item key="Ensino Fundamental (1o. Grau) completo" text="Ensino Fundamental (1o. Grau) completo" />
+                                            <core:Item key="Ensino Médio (2o. Grau) interrompido" text="Ensino Médio (2o. Grau) interrompido" />
+                                            <core:Item key="Ensino Médio (2o. Grau) interrompido" text="Ensino Médio (2o. Grau) interrompido" />
+                                            <core:Item key="Ensino Médio (2o. Grau) cursando" text="Ensino Médio (2o. Grau) cursando" />
+                                            <core:Item key="Ensino Médio Profissionalizante cursando" text="Ensino Médio Profissionalizante cursando" />
+                                            <core:Item key="Ensino Médio (2o. Grau) completo" text="Ensino Médio (2o. Grau) completo" />
+                                            <core:Item key="Ensino Médio Profissionalizante completo" text="Ensino Médio Profissionalizante completo" />
+                                            <core:Item key="Formação superior interrompida" text="Formação superior interrompida" />
+                                            <core:Item key="Formação superior (cursando)" text="Formação superior (cursando)" />
+                                            <core:Item key="Formação superior completa" text="Formação superior completa" />
+                                            <core:Item key="Pós-graduação no nível Especialização" text="Pós-graduação no nível Especialização" />
+                                            <core:Item key="Pós-graduação no nível Mestrado" text="Pós-graduação no nível Mestrado" />
+                                            <core:Item key="Pós-graduação no nível Doutorado" text="Pós-graduação no nível Doutorado" />
                                         </items>
                                     </ComboBox>
                                 </form:fields>
@@ -109,14 +120,7 @@
                             
                             <form:FormElement >
                                 <form:fields>
-                                    <ComboBox selectedKey="{Participante>/curso}" placeholder="Curso">
-                                        <items>
-                                            <core:Item key="Nenhum" text="Nenhum" />
-                                            <core:Item key="Básico" text="Básico" />
-                                            <core:Item key="Intermediário" text="Intermediário" />
-                                            <core:Item key="Avançado" text="Avançado" />
-                                        </items>
-                                    </ComboBox>
+                                    <Input value="{Participante>/curso}" placeholder="Curso"></Input>
                                 </form:fields>
                             </form:FormElement>
 

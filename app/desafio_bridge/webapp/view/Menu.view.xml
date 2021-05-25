@@ -17,6 +17,7 @@
                         <StandardListItem title="Consulta de Vagas" type="Active" press="onNavVagasConsulta"/>
                         <StandardListItem title="Cadastro de Participantes" type="Active" press="onNavParticipanteCadastro"/>
                         <StandardListItem title="Consulta de Participantes" type="Active" press="onNavParticipantesConsulta"/>
+                        <StandardListItem title="Login de Participantes" type="Active" press="onNavLoginParticipante"/>                        
                     </items>
                 </List>
             </VBox>

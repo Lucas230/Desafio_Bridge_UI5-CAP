@@ -2,7 +2,7 @@
   // Use IntelliSense to learn about possible attributes.
   // Hover to view descriptions of existing attributes.
   // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-  "version": "0.2.0",
+  "version": "",
   "configurations": [
     {
       "command": "cds run --with-mocks --in-memory?",
@@ -14,7 +14,7 @@
       ]
     },
     {
-      "name": "Run desafio_bridge-7",
+      "name": "Run Desafio_Bridge-6",
       "request": "launch",
       "type": "node",
       "cwd": "${workspaceFolder}",
@@ -33,10 +33,10 @@
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "envFile": "${workspaceFolder}/.env7",
+      "envFile": "${workspaceFolder}/.env6",
       "env": {
         "NODE_ENV": "development",
-        "run.config": "{\"handlerId\":\"cap_run_config_handler_id\",\"runnableId\":\"{\\\"projectPath\\\":\\\"/home/user/projects/desafio_bridge\\\",\\\"profileName\\\":\\\"development\\\"}\"}"
+        "run.config": "{\"handlerId\":\"cap_run_config_handler_id\",\"runnableId\":\"{\\\"projectPath\\\":\\\"/home/user/projects/Desafio_Bridge\\\",\\\"profileName\\\":\\\"development\\\"}\"}"
       }
     }
   ]
