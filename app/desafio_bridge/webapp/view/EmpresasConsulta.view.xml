@@ -1,0 +1,39 @@
+<mvc:View 
+controllerName="desafiobridge.desafiobridge.controller.EmpresasConsulta" 
+xmlns:mvc="sap.ui.core.mvc" 
+displayBlock="true" 
+xmlns="sap.m">
+	<Page showHeader="true" title="Consulta de Empresas" titleAlignment="Center">
+        <content>
+            <Table mode="Delete" id="tableEmpresas" delete="onExcluir" items="{path: 'Empresas>/'}">
+                <headerToolbar>
+                    <OverflowToolbar >
+                        <content>
+                            <Title text="Empresas" level="H2" />
+                            <ToolbarSpacer ></ToolbarSpacer>
+                            <SearchField placeholder="Digite o nome da empresa" width="50%" liveChange="onSearch" ></SearchField>
+                        </content>
+                    </OverflowToolbar>
+                </headerToolbar>
+                <columns>
+                    
+                    <Column demandPopin="true" minScreenWidth="Desktop">
+                        <Label wrapping="true" text="Nome" design="Bold"></Label>
+                    </Column>
+                    <Column demandPopin="true" minScreenWidth="Desktop">
+                        <Label wrapping="true" text="E-mail" design="Bold"></Label>
+                    </Column>
+                    
+                </columns>
+                <items>
+                    <ColumnListItem type="Detail" detailPress="onNavEditarEmpresa">
+                        <cells>
+                            <Text text="{Empresas>nome}"></Text>
+                            <Text text="{Empresas>email}"></Text>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>

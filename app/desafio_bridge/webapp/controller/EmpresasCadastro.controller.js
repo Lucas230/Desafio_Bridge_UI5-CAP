@@ -20,7 +20,7 @@ sap.ui.define([
                 // Rota de cadastro
                 this.getRouter().getRoute("EmpresasCadastro").attachPatternMatched(this.handleRouteMatched, this);
                 // Rota de edição
-                //this.getRouter().getRoute("EmpresasEditar").attachPatternMatched(this.handleRouteMatchedEditarEmpresa, this);
+                this.getRouter().getRoute("EditarEmpresa").attachPatternMatched(this.handleRouteMatchedEditarEmpresa, this);
             },
 
             // Rota de edição
@@ -51,7 +51,7 @@ sap.ui.define([
                 // Primeiro é validado se a rota que estamos é a rota de 'EmpresasEditar'
                 // Se for, o botão será responsável por atualizar (PUT) os dados
                 // Senão, irá criar (POST) um novo registro na tabela
-                if (this.getRouter().getHashChanger().getHash().search("EmpresasEditar") === 0) {
+                if (this.getRouter().getHashChanger().getHash().search("EditarEmpresa") === 0) {
 
                     await $.ajax("/main/EmpresasSet(" + oEmpresa.ID + ")", { // Concatena o ID da Empresa selecionado na url
                         method: "PUT",
@@ -60,11 +60,10 @@ sap.ui.define([
                         },
                         // Cria a estrutura dos dados para enviar para API
                         data: JSON.stringify({
-                            "descricao": oEmpresa.descricao,
-                            "requisitos": oEmpresa.requisitos,
-                            "nivel_conhecimento": oEmpresa.nivel_conhecimento,
-                            "empresa": oEmpresa.empresa,
-                            "participantes": oEmpresa.participantes
+                            "email": oEmpresa.email,
+                            "nome": oEmpresa.nome,
+                            "senha": oEmpresa.senha
+                            
                         }),
                         success() {
                             // Se a api retornar sucesso, exibe uma mensagem para o usuário e navega para a tela de "EmpresasConsulta"
@@ -110,7 +109,7 @@ sap.ui.define([
             onCancelar: function () {
                 // Se a rota for a de "EmpresasEditar", navega para a tela de Consuta
                 // Senão, limpa o model 'Empresa'
-                if (this.getRouter().getHashChanger().getHash().search("EmpresasEditar") === 0) {
+                if (this.getRouter().getHashChanger().getHash().search("EditarEmpresa") === 0) {
                     this.getRouter().navTo("EmpresasConsulta");
                     //Limpa os campos
                     this.getView().setModel(new JSONModel(), "Empresa");

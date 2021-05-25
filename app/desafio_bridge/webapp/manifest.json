@@ -149,6 +149,16 @@
                     "name": "VagasEditar",
                     "pattern": "VagasEditar/{ID}",
                     "target": ["Menu", "VagasCadastro"]
+                },
+                {
+                    "name": "EmpresasConsulta",
+                    "pattern": "EmpresasConsulta",
+                    "target": [ "Menu", "EmpresasConsulta"]
+                },
+                {
+                    "name": "EditarEmpresa",
+                    "pattern": "EditarEmpresa/{ID}",
+                    "target": ["Menu", "EmpresasCadastro"]
                 }
             ],
             "targets": {
@@ -221,6 +231,14 @@
                     "clearControlAggregation": false,
                     "viewId": "empresascadastro",
                     "viewName": "EmpresasCadastro",
+                    "controlAggregation": "detailPages"
+                },
+                "EmpresasConsulta": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "empresasconsulta",
+                    "viewName": "EmpresasConsulta",
                     "controlAggregation": "detailPages"
                 }
             }
