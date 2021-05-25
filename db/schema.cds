@@ -31,7 +31,7 @@ entity Participantes : cuid {
     conhecimento : String(50);
     senha        : String(50);
     telefone     : String(20);
-    escolaridade : String(20);
+    escolaridade : String(100);
     instituicao  : Association to Instituicoes;
     curso        : String(50);
 }
