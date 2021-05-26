@@ -1,0 +1,40 @@
+<mvc:View 
+    controllerName="desafiobridge.desafiobridge.controller.MenuLogin"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns:tnt="sap.tnt"
+    xmlns="sap.m">
+
+    <Page showHeader="true" title="Menu Login" titleAlignment="Center" >
+        <content>
+            <VBox width="100%">
+                <Image src="images/BB_logo.png" width="50%" height="50%" />
+                <List>
+                    <items>
+                        <StandardListItem title="Login de Participantes" type="Active" press="onNavLoginParticipante"/>
+                        <StandardListItem title="Login de Empresas" type="Active" press="onNavLoginEmpresa"/>
+                        <StandardListItem title="Login Administrador" type="Active" press="onNavLoginAdm"/>
+                        <StandardListItem title="Cadastro de Participante" type="Active" press="onNavParticipanteCadastro"/>
+                        <StandardListItem title="Cadastro de Empresa" type="Active" press="onNavEmpresasCadastro"/>
+                    </items>
+                </List>
+            </VBox>
+        </content>
+        <!--<tnt:NavigationList
+		id="navigationList"
+		width="320px">
+
+		<tnt:NavigationListItem text="Login" key="rootItem1">
+			<tnt:NavigationListItem text="Login de Participantes" type="Active" press="onNavLoginParticipante" />
+			<tnt:NavigationListItem text="Login de Empresas" type="Active" press="onNavLoginEmpresa" />
+			<tnt:NavigationListItem text="Login Administrador" type="Active" press="onNavLoginAdm" />
+		</tnt:NavigationListItem>
+
+		<tnt:NavigationListItem text="Cadastrar">
+			<tnt:NavigationListItem text="Cadastro de Participante" type="Active" press="onNavParticipanteCadastro" />
+			<tnt:NavigationListItem text="Cadastro de Empresa" type="Active" press="onNavEmpresasCadastro" />
+		</tnt:NavigationListItem>
+
+	</tnt:NavigationList>-->
+    </Page>
+</mvc:View>

@@ -118,7 +118,7 @@ sap.ui.define([
                     // Primeiro é validado se a rota que estamos é a rota de 'VagasEditar'
                     // Se for, o botão será responsável por atualizar (PUT) os dados
                     // Senão, irá criar (POST) um novo registro na tabela
-                        if (this.getRouter().getHashChanger().getHash().search("EditarParticipante") === 0) {
+                        if (this.getRouter().getHashChanger().getHash().search("EditarParticipante") === 0) { //caso seja edição
 
                             await $.ajax("/main/ParticipantesSet("+ oParticipante.ID +")", { // Concatena o ID da vaga selecionado na url
                                 method: "PUT",
@@ -155,9 +155,9 @@ sap.ui.define([
                             });
                             this.getView().setModel(new JSONModel(), "Participante");
                         }
-                        else {
+                        else {//caso seja cadastro
                             this._getCpf (async(aCPF)  => {
-                                if(aCPF == null){
+                                if(aCPF == null){//caso não haja dados na tabela
 
                                     this.getView().setBusy(true);
                                         // Método POST para salvar os dados 
@@ -181,7 +181,11 @@ sap.ui.define([
                                                 
                                             }),
                                             success() {
-                                                MessageBox.success("Salvo com sucesso!");
+                                                MessageBox.success("Salvo com sucesso!", {
+                                                    onClose: function () {
+                                                        that.getRouter().navTo("LoginParticipante");
+                                                    }
+                                                });
                                             },
                                             error() {
                                                 MessageBox.error("Não foi possível salvar o Participante!");
@@ -192,10 +196,8 @@ sap.ui.define([
                                         return;
                                 }
                                 else{
-                                // Aqui dentro vai existir aquela array cpf
-                                    for(var x=0; x<aCPF.length;x++){
-                                        console.log(aCPF[x] +"----"+oParticipante.cpf);
-                                        if(oParticipante.cpf == aCPF[x]){
+                                    for(var x=0; x<aCPF.length;x++){//rodando a array de CPFs para verificar se é igual ao digitado
+                                        if(oParticipante.cpf == aCPF[x]){//caso o CPF esteja cadastrado
                                             MessageBox.error("CPF já cadastrado", {
                                                 onClose: function () {
                                                     that.getRouter().navTo("LoginParticipante");
@@ -203,7 +205,7 @@ sap.ui.define([
                                             });
                                             return;
                                         }
-                                        else if(x == aCPF.length-1){
+                                        else if(x == aCPF.length-1){//caso o cpf não esteja cadastrado
                                             
                                             this.getView().setBusy(true);
                                             // Método POST para salvar os dados 
@@ -227,7 +229,11 @@ sap.ui.define([
                                                     
                                                 }),
                                                 success() {
-                                                    MessageBox.success("Salvo com sucesso!");
+                                                    MessageBox.success("Salvo com sucesso!", {
+                                                        onClose: function () {
+                                                            that.getRouter().navTo("LoginParticipante");
+                                                        }
+                                                    });
                                                 },
                                                 error() {
                                                     MessageBox.error("Não foi possível salvar o Participante!");

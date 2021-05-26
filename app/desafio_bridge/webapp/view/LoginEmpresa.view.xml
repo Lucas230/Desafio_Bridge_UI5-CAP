@@ -1,12 +1,12 @@
 <mvc:View
     xmlns:core="sap.ui.core" 
-    controllerName="desafiobridge.desafiobridge.controller.LoginParticipante"
+    controllerName="desafiobridge.desafiobridge.controller.LoginEmpresa"
     xmlns:form="sap.ui.layout.form" 
     xmlns:mvc="sap.ui.core.mvc" 
     displayBlock="true" 
     xmlns="sap.m"
 >
-	<Page showHeader="true" title="Login de Participante" titleAlignment="Center">
+	<Page showHeader="true" title="Login de Empresa" titleAlignment="Center">
         <content>
             <form:Form >
                 <form:title>
@@ -21,13 +21,13 @@
 
                             <form:FormElement >
                                 <form:fields>
-                                    <Input id="email" placeholder="E-mail"></Input>
+                                    <Input id="email"  placeholder="E-mail"></Input>
                                 </form:fields>
                             </form:FormElement>
 
                             <form:FormElement >
                                 <form:fields>
-                                    <Input id="senha" type="Password" placeholder="Senha"></Input>
+                                    <Input id="senha" type="Password"  placeholder="Senha"></Input>
                                 </form:fields>
                             </form:FormElement>                            
                             
