@@ -1,24 +1,21 @@
 <mvc:View 
-controllerName="desafiobridge.desafiobridge.controller.ParticipantesConsulta" 
+controllerName="desafiobridge.desafiobridge.controller.VerParticipante" 
 xmlns:mvc="sap.ui.core.mvc" 
 displayBlock="true" 
 xmlns="sap.m">
 	<Page showHeader="true" title="Consulta de Participantes" titleAlignment="Center">
         <content>
-            <Table mode="Delete" id="tableParticipantes" delete="onExcluir" items="{path: 'Participantes>/'}">
+            <Table mode="Delete" id="tableParticipantes" items="{path: 'Participantes>/'}">
                 <headerToolbar>
                     <OverflowToolbar >
                         <content>
-                            <Title text="Vagas" level="H2" />
+                            <Title text="Cnssultar Participantes" level="H2" />
                             <ToolbarSpacer ></ToolbarSpacer>
-                            <SearchField placeholder="Digite o nome de uma Vaga" width="50%" liveChange="onSearch" ></SearchField>
+                            <SearchField placeholder="Digite o nivel de conhecimento" width="50%" liveChange="onSearch" ></SearchField>
                         </content>
                     </OverflowToolbar>
                 </headerToolbar>
                 <columns>
-                    <Column demandPopin="true" minScreenWidth="Desktop">
-                        <Label wrapping="true" text="ID" design="Bold"></Label>
-                    </Column>
                     <Column demandPopin="true" minScreenWidth="Desktop">
                         <Label wrapping="true" text="Nome" design="Bold"></Label>
                     </Column>
@@ -28,14 +25,21 @@ xmlns="sap.m">
                     <Column demandPopin="true" minScreenWidth="Desktop">
                         <Label wrapping="true" text="Nivel de conhecimento" design="Bold"></Label>
                     </Column>
+                    <Column demandPopin="true" minScreenWidth="Desktop">
+                        <Label wrapping="true" text="Escolaridade" design="Bold"></Label>
+                    </Column>
+                    <Column demandPopin="true" minScreenWidth="Desktop">
+                        <Label wrapping="true" text="Instituição" design="Bold"></Label>
+                    </Column>
                 </columns>
                 <items >
-                    <ColumnListItem type="Detail" detailPress="onNavEditarParticipante">
+                    <ColumnListItem type="Navigation" press="onNavVerParticipante">
                         <cells>
-                            <Text text="{Participantes>ID}"></Text>
                             <Text text="{Participantes>nome}"></Text>
                             <Text text="{Participantes>email}"></Text>
                             <Text text="{Participantes>conhecimento}"></Text>
+                            <Text text="{Participantes>escolaridade}"></Text>
+                            <Text text="{Participantes>instituicao/nome}"></Text>
                         </cells>
                     </ColumnListItem>
                 </items>

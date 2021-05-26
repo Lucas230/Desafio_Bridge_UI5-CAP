@@ -1,5 +1,5 @@
 <mvc:View xmlns:core="sap.ui.core" 
-    controllerName="desafiobridge.desafiobridge.controller.VagasParticipantes"
+    controllerName="desafiobridge.desafiobridge.controller.HomeEmpresa"
     xmlns:form="sap.ui.layout.form" 
     xmlns:mvc="sap.ui.core.mvc" 
     displayBlock="true" 
@@ -18,7 +18,7 @@
                         <form:formElements>
                             <form:FormElement>
                                 <form:fields>
-                                    <TextArea class="vervagatext" value="Nome: {Vaga>/empresa/nome}" editable="false"/>
+                                    <TextArea class="vervagatext" value="Bem vinda empresa {Empresa>/nome}! Navegue pelo nosso sistemas para conhecer mais." editable="false"/>
                                 </form:fields>
                             </form:FormElement>
                         </form:formElements>
@@ -26,7 +26,7 @@
                         <form:formElements>
                             <form:FormElement>
                                 <form:fields>
-                                    <TextArea class="vervagatext" value="Email: {Vaga>/empresa/email}" editable="false"/>
+                                    <TextArea class="vervagatext" value="Email cadastrado: {Empresa>/email}" editable="false"/>
                                 </form:fields>
                             </form:FormElement>
                         </form:formElements>
@@ -34,23 +34,7 @@
                         <form:formElements>
                             <form:FormElement>
                                 <form:fields>
-                                    <TextArea class="vervagatext" value="Descrição da Vaga: {Vaga>/descricao}" editable="false"/>
-                                </form:fields>
-                            </form:FormElement>
-                        </form:formElements>
-
-                        <form:formElements>
-                            <form:FormElement>
-                                <form:fields>
-                                    <TextArea class="vervagatext" value="Requisitos: {Vaga>/requisitos}" editable="false"/>
-                                </form:fields>
-                            </form:FormElement>
-                        </form:formElements>
-
-                        <form:formElements>
-                            <form:FormElement>
-                                <form:fields>
-                                    <TextArea class="vervagatext" value="Nível de conhecimento exigido: {Vaga>/nivel_conhecimento}" editable="false"/>
+                                    <Button text="Editar Informações" type="Emphasized" press="onNavEditar"/>
                                 </form:fields>
                             </form:FormElement>
                         </form:formElements>
@@ -65,7 +49,6 @@
            <OverflowToolbar >
                 <Image width="4%" src="/desafio_bridge/webapp/images/BB_logo.png"/>
                 <ToolbarSpacer/>
-                    <Button text="Voltar" type="Emphasized" press="onVoltar"/>
             </OverflowToolbar>
         </footer>
 	</Page>

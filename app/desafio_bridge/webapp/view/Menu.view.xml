@@ -7,7 +7,7 @@
     <Page showHeader="true" title="Menu" titleAlignment="Center" >
         <content>
             <VBox width="100%">
-                <Image src="images/BB_logo.png" width="50%" height="50%" />
+                <Image src="images/BB_logo.png" width="50%" class="center" height="50%" />
                 <List>
                     <items>
                         <StandardListItem title="Cadastro de Vagas" type="Active" press="onNavVagasCadastro"/>
@@ -17,6 +17,7 @@
                         <StandardListItem title="Consulta de Participantes" type="Active" press="onNavParticipantesConsulta"/>                                                
                         <StandardListItem title="Consulta de Vagas (Participantes)" type="Active" press="onNavVagasParticipantes"/>
                         <StandardListItem title="Consulta de Empresas" type="Active" press="onNavEmpresasConsulta"/>
+                        <StandardListItem title="Consulta de Participantes(Empresa)" type="Active" press="onNavParticipantes"/>
                         <StandardListItem title="Sair" type="Active" press="onNavLoginParticipante"/>
                     </items>
                 </List>

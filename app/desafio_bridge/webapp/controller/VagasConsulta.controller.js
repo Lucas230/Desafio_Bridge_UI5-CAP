@@ -46,7 +46,6 @@ sap.ui.define([
                     error(){
                         MessageBox.error("Não foi possível excluir o Vaga.");
                     }
-
                 });
                 await this.handleRouteMatched(); // chama a função para recarregar os dados da tabela
                 this.getView().setBusy(false);

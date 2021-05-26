@@ -30,12 +30,12 @@ function (BaseController, MessageToast, JSONModel, MessageBox, Filter, FilterOpe
                 }
             });
         },
-        // Função do botão editar da tabela
+        
         onNavVerVaga: function(oEvent){
             var VagaId = oEvent.getSource().getBindingContext("Vagas").getObject().ID; // pega o id do Vaga selecionado
             this.getRouter().navTo("VerVaga", {ID: VagaId}); // chama a rota de edição passando o id do Vaga selecionado
         },
-        // Rota de edição
+        
         handleRouteMatchedVerVaga: async function () {
             var that = this;
             var ID = this.getRouter().getHashChanger().getHash().split("/")[1];

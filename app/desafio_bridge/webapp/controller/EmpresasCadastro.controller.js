@@ -110,7 +110,7 @@ sap.ui.define([
                 // Se a rota for a de "EmpresasEditar", navega para a tela de Consuta
                 // Senão, limpa o model 'Empresa'
                 if (this.getRouter().getHashChanger().getHash().search("EditarEmpresa") === 0) {
-                    this.getRouter().navTo("EmpresasConsulta");
+                    this.getRouter().navTo("HomeEmpresa");
                     //Limpa os campos
                     this.getView().setModel(new JSONModel(), "Empresa");
                 } else {

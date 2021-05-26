@@ -98,8 +98,6 @@ sap.ui.define([
             onConfirmar: async function () {
                 var oParticipante = this.getView().getModel("Participante").getData();
                 var that = this;
-                var def = oParticipante.deficiencia === "S" ? true : false;
-                oParticipante.deficiencia = def;
 
                 if(oParticipante.senha == null || 
                     oParticipante.confSenha == null ||
@@ -263,10 +261,13 @@ sap.ui.define([
             onCancelar: function () {
                 // Se a rota for a de "ParticipantesEditar", navega para a tela de Consuta
                 // Senão, limpa o model 'Participante'
-                if (this.getRouter().getHashChanger().getHash().search("ParticipanteEditar") === 0) {
-                    this.getRouter().navTo("ParticipantesConsulta");
+                if (this.getRouter().getHashChanger().getHash().search("EditarParticipante") === 0) {
+                    this.getRouter().navTo("HomeParticipante");
+                    //Limpa os campos
+                    this.getView().setModel(new JSONModel(), "Participante");
                 } else {
-                    this.getView().setModel("Participante");
+                    //Limpa os campos
+                    this.getView().setModel(new JSONModel(), "Participante");
                 }
             }
         });

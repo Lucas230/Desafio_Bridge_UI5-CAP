@@ -14,8 +14,6 @@ sap.ui.define([
 		return BaseController.extend("desafiobridge.desafiobridge.ParticipantesConsulta", {
 			onInit: function () {
                 this.getRouter().getRoute("ParticipantesConsulta").attachPatternMatched(this.handleRouteMatched, this);
-                
-                
 
             },
             

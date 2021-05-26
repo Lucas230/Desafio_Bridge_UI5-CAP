@@ -1,0 +1,151 @@
+<mvc:View xmlns:core="sap.ui.core" 
+    controllerName="desafiobridge.desafiobridge.controller.HomeParticipante"
+    xmlns:form="sap.ui.layout.form" 
+    xmlns:mvc="sap.ui.core.mvc" 
+    displayBlock="true" 
+    xmlns="sap.m"
+> 
+
+	<Page showHeader="true" title="Consulta da vaga" titleAlignment="Center">
+        <content>
+
+            <form:Form>
+                <form:layout>
+                     <form:ColumnLayout columnsL="1" columnsM="1" columnsXL="3"></form:ColumnLayout>
+                </form:layout>
+                <form:formContainers>
+                    <form:FormContainer>
+
+                        <form:formElements>
+                            <form:FormElement>
+                                <form:fields>
+                                    <TextArea class="vervagatext" value="Bem vindo(a) {Participante>/nome}! 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                                                       
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                            Navegue pelo nosso sistemas para conhecer mais." editable="false"/>
+                                </form:fields>
+                            </form:FormElement>
+                        </form:formElements>
+                        <form:formElements>
+                            <form:FormElement>
+                                <form:fields>
+                                    <Button text="Perfil" type="Emphasized" press="onNavEditar"/>
+                                </form:fields>
+                            </form:FormElement>
+                        </form:formElements>
+                        <form:formElements>
+                            <form:FormElement>
+                                 <form:fields>
+                                    <TextArea class="vervagatext" value="Cursos gratuitos recomendados do Nível básico ao avançado"/>
+                                 </form:fields>
+                            </form:FormElement>
+                        </form:formElements>
+                        <form:formElements>
+                            <form:FormElement>
+                                <form:fields>
+                                    <Link
+                                    text="Curso de lógica de programação"
+                                    target="_blank"
+                                    class="fontLink"
+                                    href="https://www.youtube.com/watch?v=Ds1n6aHchRU" />
+                                </form:fields>
+                            </form:FormElement>
+                        </form:formElements>
+                        <form:formElements>
+                            <form:FormElement>
+                                <form:fields>
+                                    <Link
+                                    text="FreeCodeCamp - Faça seu prejeto e ganhe certificados"
+                                    target="_blank"
+                                    class="fontLink"
+                                    href="https://www.freecodecamp.org/" />
+                                </form:fields>
+                            </form:FormElement>
+                        </form:formElements>
+                        <form:formElements>
+                            <form:FormElement>
+                                <form:fields>
+                                    <Link
+                                    text="Curso de JavaScript"
+                                    target="_blank"
+                                    class="fontLink"
+                                    href="https://www.youtube.com/watch?v=Ptbk2af68e8" />
+                                </form:fields>
+                            </form:FormElement>
+                        </form:formElements>
+                        <form:formElements>
+                            <form:FormElement>
+                                <form:fields>
+                                    <Link
+                                    text="W3Schools - Tutoriais e Referências"
+                                    target="_blank"
+                                    class="fontLink"
+                                    href="https://www.w3schools.com/" />
+                                </form:fields>
+                            </form:FormElement>
+                        </form:formElements>
+                        <form:formElements>
+                            <form:FormElement>
+                                <form:fields>
+                                    <Link
+                                    text="Curso de Logica de programação"
+                                    target="_blank"
+                                    class="fontLink"
+                                    href="https://www.youtube.com/watch?v=JaTf3dhx464" />
+                                </form:fields>
+                            </form:FormElement>
+                        </form:formElements>
+                        <form:formElements>
+                            <form:FormElement>
+                                <form:fields>
+                                    <Link
+                                    text="Uri Online Judge - Para Desafios"
+                                    target="_blank"
+                                    class="fontLink"
+                                    href="https://www.urionlinejudge.com.br/judge/en/login" />
+                                </form:fields>
+                            </form:FormElement>
+                        </form:formElements>
+                        <form:formElements>
+                            <form:FormElement>
+                                <form:fields>
+                                    <Link
+                                    text="OpenSAP - Cursos voltados para o mundo SAP"
+                                    target="_blank"
+                                    class="fontLink"
+                                    href="https://open.sap.com/" />
+                                </form:fields>
+                            </form:FormElement>
+                        </form:formElements>
+
+                    </form:FormContainer>
+                    
+                </form:formContainers>
+                
+            </form:Form>
+        </content>
+		<footer>
+           <OverflowToolbar >
+                <Image width="4%" src="/desafio_bridge/webapp/images/BB_logo.png"/>
+                <ToolbarSpacer/>
+            </OverflowToolbar>
+        </footer>
+	</Page>
+	
+</mvc:View>

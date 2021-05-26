@@ -184,6 +184,26 @@
                     "name": "EditarEmpresa",
                     "pattern": "EditarEmpresa/{ID}",
                     "target": ["Menu", "EmpresasCadastro"]
+                },
+                {
+                    "name": "HomeEmpresa",
+                    "pattern": "HomeEmpresa",
+                    "target": ["Menu", "HomeEmpresa"]
+                },
+                {
+                    "name": "HomeParticipante",
+                    "pattern": "HomeParticipante",
+                    "target": ["Menu", "HomeParticipante"]
+                },
+                { 
+                    "name": "Participantes",
+                    "pattern": "Participantes",
+                    "target": ["Menu", "Participantes"]
+                },
+                { 
+                    "name": "VerParticipante",
+                    "pattern": "VerParticipante/{id}",
+                    "target": ["Menu", "VerParticipante"]
                 }
             ],
             "targets": {
@@ -312,6 +332,38 @@
                     "clearControlAggregation": false,
                     "viewId": "empresasconsulta",
                     "viewName": "EmpresasConsulta",
+                    "controlAggregation": "detailPages"
+                },
+                "HomeEmpresa": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "homeempresa",
+                    "viewName": "HomeEmpresa",
+                    "controlAggregation": "detailPages"
+                },
+                "HomeParticipante": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "homeparticipante",
+                    "viewName": "HomeParticipante",
+                    "controlAggregation": "detailPages"
+                },
+                "VerParticipante": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "verparticipante",
+                    "viewName": "VerParticipante",
+                    "controlAggregation": "detailPages"
+                },
+                "Participantes": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "verpartconsulta",
+                    "viewName": "VerPartConsulta",
                     "controlAggregation": "detailPages"
                 }
             }
