@@ -8,7 +8,8 @@
   "dependencies": {
     "@sap/cds": "^4",
     "@sap/hana-client": "^2.6.61",
-    "express": "^4"
+    "express": "^4",
+    "hdb": "^0.18.3"
   },
   "devDependencies": {
     "@sap/hdi-deploy": "4.0.5",

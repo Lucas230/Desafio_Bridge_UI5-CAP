@@ -1,19 +1,19 @@
 <mvc:View
     xmlns:core="sap.ui.core" 
-    controllerName="desafiobridge.desafiobridge.controller.ParticipanteCadastro"
+    controllerName="desafiobridge.desafiobridge.controller.VerParticipante"
     xmlns:form="sap.ui.layout.form" 
     xmlns:mvc="sap.ui.core.mvc" 
     displayBlock="true" 
     xmlns="sap.m"
 >
-	<Page showHeader="true" title="Cadastro de Participante" titleAlignment="Center">
+	<Page showHeader="true" title="Perfil do Participante" titleAlignment="Center">
         <content>
             <form:Form >
                 <form:title>
                     <core:Title text="Preencha os campos necessários" level="H6" ></core:Title>
                 </form:title>
                 <form:layout>
-                    <form:ColumnLayout columnsL="2" columnsM="2" columnsXL="3"></form:ColumnLayout>
+                    <form:ColumnLayout columnsL="2" columnsM="2" columnsXL="2"></form:ColumnLayout>
                 </form:layout>
                 <form:formContainers> 
                     <form:FormContainer >
@@ -23,7 +23,7 @@
                                     <Label text="Nome" design="Bold"></Label>
                                 </form:label>
                                 <form:fields>
-                                    <Input value="{Participante>/nome}" ></Input>
+                                    <Input value="{Participante>/nome}" editable="false" placeholder="Nome"></Input>
                                 </form:fields>
                             </form:FormElement>
 
@@ -32,7 +32,7 @@
                                     <Label text="E-mail" design="Bold"></Label>
                                 </form:label>
                                 <form:fields>
-                                    <Input value="{Participante>/email}" ></Input>
+                                    <Input value="{Participante>/email}" editable="false" placeholder="E-mail"></Input>
                                 </form:fields>
                             </form:FormElement>
 
@@ -41,7 +41,7 @@
                                     <Label text="CPF" design="Bold"></Label>
                                 </form:label>
                                 <form:fields>
-                                    <Input value="{Participante>/cpf}" ></Input>
+                                    <Input value="{Participante>/cpf}" editable="false" placeholder="CPF"></Input>
                                 </form:fields>
                             </form:FormElement>
                             
@@ -50,7 +50,7 @@
                                     <Label text="Possui deficiência" design="Bold"></Label>
                                 </form:label>
                                 <form:fields>
-                                    <ComboBox selectedKey="{Participante>/deficiencia}" >
+                                    <ComboBox selectedKey="{Participante>/deficiencia}" editable="false" placeholder="Possui deficiência?">
                                         <items>
                                             <core:Item key="true" text="Sim" />
                                             <core:Item key="false" text="Não" />
@@ -64,7 +64,7 @@
                                     <Label text="Sexo" design="Bold"></Label>
                                 </form:label>
                                 <form:fields>
-                                    <ComboBox selectedKey="{Participante>/sexo}" >
+                                    <ComboBox selectedKey="{Participante>/sexo}" editable="false" placeholder="Sexo">
                                         <items>
                                             <core:Item key="Masculino" text="Masculino" />
                                             <core:Item key="Feminino" text="Feminino" />
@@ -73,38 +73,18 @@
                                     </ComboBox>
                                 </form:fields>
                             </form:FormElement>
-
-                            <form:FormElement >
-                                <form:label>
-                                    <Label text="Senha" design="Bold"></Label>
-                                </form:label>
-                                <form:fields>
-                                    <Input type="Password" value="{Participante>/senha}" ></Input>
-                                </form:fields>
-                            </form:FormElement>
-
-                            <form:FormElement >
-                                <form:label>
-                                    <Label text="Confirmar senha" design="Bold"></Label>
-                                </form:label>
-                                <form:fields>
-                                    <Input type="Password" value="{Participante>/confSenha}" ></Input>
-                                </form:fields>
-                            </form:FormElement >
-                            
                         </form:formElements>
                     </form:FormContainer>
                     
 
                     <form:FormContainer >
                         <form:formElements>
-
                             <form:FormElement >
                                 <form:label>
                                     <Label text="Telefone" design="Bold"></Label>
                                 </form:label>
                                 <form:fields>
-                                    <Input value="{Participante>/telefone}" ></Input>
+                                    <Input value="{Participante>/telefone}" editable="false" ></Input>
                                 </form:fields>
                             </form:FormElement>
 
@@ -113,7 +93,7 @@
                                     <Label text="Escolaridade" design="Bold"></Label>
                                 </form:label>
                                 <form:fields>
-                                    <ComboBox selectedKey="{Participante>/escolaridade}" >
+                                    <ComboBox selectedKey="{Participante>/escolaridade}" editable="false" placeholder="Escolaridade">
                                         <items>
                                             <core:Item key="Ensino Fundamental (1o. Grau) interrompido" text="Ensino Fundamental (1o. Grau) interrompido" />
                                             <core:Item key="Ensino Fundamental (1o. Grau) cursando" text="Ensino Fundamental (1o. Grau) cursando" />
@@ -140,11 +120,7 @@
                                     <Label text="Instituição" design="Bold"></Label>
                                 </form:label>
                                 <form:fields>
-                                    <ComboBox selectedKey="{Participante>/instituicao_ID}"  items="{InstituicaoList>/}">
-                                        <items>
-                                            <core:Item key="{InstituicaoList>ID}" text="{InstituicaoList>nome}" />
-                                        </items>
-                                    </ComboBox>
+                                    <Input value="{Participante>/instituicao/nome}" editable="false"></Input>
                                 </form:fields>
                             </form:FormElement>
                             
@@ -153,7 +129,7 @@
                                     <Label text="Curso" design="Bold"></Label>
                                 </form:label>
                                 <form:fields>
-                                    <Input value="{Participante>/curso}"></Input>
+                                    <Input value="{Participante>/curso}" editable="false" placeholder="Curso"></Input>
                                 </form:fields>
                             </form:FormElement>
 
@@ -162,7 +138,7 @@
                                     <Label text="Nível de conhecimento" design="Bold"></Label>
                                 </form:label>
                                 <form:fields>
-                                    <ComboBox selectedKey="{Participante>/conhecimento}" >
+                                    <ComboBox selectedKey="{Participante>/conhecimento}" editable="false" placeholder="Nível conhecimento em TI">
                                         <items>
                                             <core:Item key="nenhum" text="Nenhum" />
                                             <core:Item key="basico" text="Básico" />
@@ -184,8 +160,7 @@
         <footer>
             <OverflowToolbar >
                 <ToolbarSpacer/>
-                <Button text="Cancelar" type="Reject" press="onCancelar"/>
-                <Button text="Confirmar" type="Emphasized" press="onConfirmar"/>
+                <Button text="Voltar" type="Emphasized" press="onVoltar"/>
             </OverflowToolbar>
         </footer>
     </Page>

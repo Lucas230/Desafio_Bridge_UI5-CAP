@@ -33,7 +33,7 @@ sap.ui.define([
             onNavParticipanteCadastro: function(){
                 console.log("partici");
                 this.getRouter().navTo("ParticipanteCadastro");
-             },
+            },
             
             // Função do botão de "Cadastro de instituições"
             onNavInstituicoesCadastro: function(){
@@ -52,6 +52,9 @@ sap.ui.define([
             },
             onNavVagasParticipantes: function(){
                 this.getRouter().navTo("VagasParticipantes");
+            },
+            onNavParticipantes: function(){
+                this.getRouter().navTo("Participantes");
             }
 		});
 	});
