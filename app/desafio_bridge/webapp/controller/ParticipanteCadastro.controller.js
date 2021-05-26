@@ -98,6 +98,8 @@ sap.ui.define([
             onConfirmar: async function () {
                 var oParticipante = this.getView().getModel("Participante").getData();
                 var that = this;
+                var def = oParticipante.deficiencia === "true" ? true : false;
+                oParticipante.deficiencia = def;
 
                 if(oParticipante.senha == null || 
                     oParticipante.confSenha == null ||

@@ -153,7 +153,7 @@
                                     <Label text="Curso" design="Bold"></Label>
                                 </form:label>
                                 <form:fields>
-                                    <Input value="{Participante>/curso}"></Input>
+                                    <Input value="{Participante>/curso}" placeholder="Exemplo: Ensino Médio, Ciência de Dados, Informática, etc."></Input>
                                 </form:fields>
                             </form:FormElement>
 
