@@ -9,16 +9,16 @@ sap.ui.define([
 	function (BaseController, Controller, MessageBox) {
 		"use strict";
 
-		return BaseController.extend("desafiobridge.desafiobridge.controller.LoginParticipante", {
+		return BaseController.extend("desafiobridge.desafiobridge.controller.LoginEmpresa", {
 			onInit: function () {
-              
+
             },
             
             _getLogin: async function (handleFunction) {
                 
                 await
                     $.ajax({
-                        "url": "/main/ParticipantesSet",
+                        "url": "/main/EmpresasSet",
                         "method": "GET",
                         success(data) {
                             //console.log(data.value); // salva o retorno da API (data) em um Model chamado 'Instituição'
@@ -47,7 +47,7 @@ sap.ui.define([
 
                         },
                         error() {
-                            MessageBox.error("Não foi possível buscar os Participantes.") //Se der erro de API, exibe uma mensagem ao usuário
+                            MessageBox.error("Não foi possível buscar os Empresa.") //Se der erro de API, exibe uma mensagem ao usuário
                         }
                     });
             },
@@ -68,27 +68,25 @@ sap.ui.define([
                         if(aLogin == null){
                              MessageBox.success("Conta inexistente, cria uma para acesar", {
                                         onClose: function () {
-                                            that.getRouter().navTo("ParticipanteCadastro");
+                                            that.getRouter().navTo("EmpresaCadastro");
                                         }
                                     });
                         }
                         else{
                             var that = this;
                             for(var x=0;x<aLogin.email.length;x++){
-
                                 if(email._sTypedInValue == aLogin.email[x] && senha._sTypedInValue == aLogin.senha[x]){
                                     sap.ui.getCore().setModel( aLogin.id[x], "global");
-
                                     MessageBox.success("Login efetuado com sucesso!", {
                                         onClose: function () {
-                                            that.getRouter().navTo("InstituicoesConsulta");
+                                            that.getRouter().navTo("ParticipantesConsulta");
                                         }
                                     });
                                     return;
                                 }
 
                                 else if(x == aLogin.email.length-1){
-                                    MessageBox.error("Login ou senha inválidos");
+                                    MessageBox.error("Login ou senha inválidos opa");
                                     return;
                                 }
                                 
