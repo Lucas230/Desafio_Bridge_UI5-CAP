@@ -44,3 +44,5 @@ default-env.json
 
 # auto generated wildcard
 .env2
+# auto generated wildcard
+.env3
