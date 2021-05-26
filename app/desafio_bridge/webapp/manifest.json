@@ -96,14 +96,29 @@
                     ]
                 },
                 {
-                    "name": "Menu",
+                    "name": "MenuLogin",
                     "pattern": "",
-                    "target": ["Menu", "EmpresasCadastro"]
+                    "target": ["MenuLogin", "LoginParticipante"]
+                },
+                {
+                    "name": "LoginParticipante",
+                    "pattern": "LoginParticipante",
+                    "target": ["MenuLogin", "LoginParticipante"]
+                },
+                {
+                    "name": "LoginEmpresa",
+                    "pattern": "LoginEmpresa",
+                    "target": ["MenuLogin", "LoginEmpresa"]
+                },
+                {
+                    "name": "LoginAdm",
+                    "pattern": "LoginAdm",
+                    "target": ["MenuLogin", "LoginAdm"]
                 },
                 {
                     "name": "EmpresasCadastro",
                     "pattern": "EmpresasCadastro",
-                    "target": ["Menu", "EmpresasCadastro"]
+                    "target": ["MenuLogin", "EmpresasCadastro"]
                 },
                 {
                     "name": "VagasCadastro",
@@ -113,7 +128,7 @@
                 {
                     "name": "ParticipanteCadastro",
                     "pattern": "ParticipanteCadastro",
-                    "target": [ "Menu", "ParticipanteCadastro"]
+                    "target": [ "MenuLogin", "ParticipanteCadastro"]
                 },
                 {
                     "name": "InstituicoesCadastro",
@@ -150,11 +165,6 @@
                     "pattern": "VagasEditar/{ID}",
                     "target": ["Menu", "VagasCadastro"]
                 },
-                {
-                    "name": "LoginParticipante",
-                    "pattern": "LoginParticipante",
-                    "target": ["Menu", "LoginParticipante"]
-                },
                 { 
                     "name": "VagasParticipantes",
                     "pattern": "VagasParticipantes",
@@ -183,6 +193,14 @@
 					"clearControlAggregation": false,
 					"viewId": "menu",
                     "viewName": "Menu",
+                    "controlAggregation": "masterPages"
+                },
+                "MenuLogin": { 
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"viewId": "menulogin",
+                    "viewName": "MenuLogin",
                     "controlAggregation": "masterPages"
                 },
                 "TargetView": {
@@ -254,6 +272,22 @@
                     "clearControlAggregation": false,
                     "viewId": "loginparticipante",
                     "viewName": "LoginParticipante",
+                    "controlAggregation": "detailPages"
+                },
+                "LoginEmpresa": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "loginempresa",
+                    "viewName": "LoginEmpresa",
+                    "controlAggregation": "detailPages"
+                },
+                "LoginAdm": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "loginadm",
+                    "viewName": "LoginAdm",
                     "controlAggregation": "detailPages"
                 },
                 "VagasParticipantes": {
