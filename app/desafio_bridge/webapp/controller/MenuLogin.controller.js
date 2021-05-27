@@ -19,12 +19,6 @@ sap.ui.define([
             },
             onNavLoginAdm: function(){
                 this.getRouter().navTo("LoginAdm");
-            },
-            onNavEmpresasCadastro: function(){
-                this.getRouter().navTo("EmpresasCadastro");
-            },
-            onNavParticipanteCadastro: function(){
-                this.getRouter().navTo("ParticipanteCadastro");
-             }
+            }
 		});
 	});

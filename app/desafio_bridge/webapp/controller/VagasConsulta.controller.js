@@ -14,6 +14,8 @@ sap.ui.define([
 		return BaseController.extend("desafiobridge.desafiobridge.controller.VagasConsulta", {
 			onInit: function () {
                 this.getRouter().getRoute("VagasConsulta").attachPatternMatched(this.handleRouteMatched, this);
+
+                this.getRouter().getRoute("EmpresaVagasConsulta").attachPatternMatched(this.EmpresaConsultaVaga, this);
             },
 
             handleRouteMatched: async function(){
@@ -69,6 +71,23 @@ sap.ui.define([
                 var oList = this.byId("tableVagas");
                 var oBinding = oList.getBinding("items");
                 oBinding.filter(aFilters, "Application");
+            },
+            EmpresaConsultaVaga: async function(){
+                var that = this;
+                // Busca todos os Vagas cadastradas (GET)
+                var ID = sap.ui.getCore().getModel("global");
+                console.log(ID);
+                await
+                $.ajax({
+                    "url": "/main/VagasSet?$expand=empresa&$filter=empresa/ID eq ("+ID+")",
+                    "method": "GET",
+                    success(data){
+                        that.getView().setModel(new JSONModel(data.value), "Vagas");
+                    },
+                    error(){
+                        MessageBox.error("Não foi possível buscar as Vagas.");
+                    }
+                })
             }
 		});
 	});

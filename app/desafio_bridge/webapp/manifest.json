@@ -204,6 +204,11 @@
                     "name": "VerParticipante",
                     "pattern": "VerParticipante/{id}",
                     "target": ["Menu", "VerParticipante"]
+                },
+                { 
+                    "name": "EmpresaVagasConsulta",
+                    "pattern": "EmpresaVagasConsulta",
+                    "target": ["Menu", "VagasConsulta"]
                 }
             ],
             "targets": {

@@ -97,6 +97,9 @@ sap.ui.define([
 
                 
 
+            },
+            onCadastrar: function (){
+                this.getRouter().navTo("EmpresasCadastro");
             }
 		});
 	});

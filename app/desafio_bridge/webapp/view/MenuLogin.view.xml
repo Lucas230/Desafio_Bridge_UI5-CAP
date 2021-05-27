@@ -8,14 +8,12 @@
     <Page showHeader="true" title="Menu Login" titleAlignment="Center" >
         <content>
             <VBox width="100%">
-                <Image src="images/BB_logo.png" width="50%" height="50%" />
+                <Image src="images/BB_logo.png" width="50%" class="center" height="50%" />
                 <List>
                     <items>
                         <StandardListItem title="Login de Participantes" type="Active" press="onNavLoginParticipante"/>
                         <StandardListItem title="Login de Empresas" type="Active" press="onNavLoginEmpresa"/>
                         <StandardListItem title="Login Administrador" type="Active" press="onNavLoginAdm"/>
-                        <StandardListItem title="Cadastro de Participante" type="Active" press="onNavParticipanteCadastro"/>
-                        <StandardListItem title="Cadastro de Empresa" type="Active" press="onNavEmpresasCadastro"/>
                     </items>
                 </List>
             </VBox>

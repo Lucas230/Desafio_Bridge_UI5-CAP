@@ -116,6 +116,7 @@ sap.ui.define([
                 } else {
                     //Limpa os campos
                     this.getView().setModel(new JSONModel(), "Empresa");
+                    this.getRouter().navTo("LoginEmpresa");
                 }
             }
         });
