@@ -146,7 +146,15 @@ sap.ui.define([
                                     // Se a api retornar sucesso, exibe uma mensagem para o usuário e navega para a tela de "ParticipantesConsulta"
                                     MessageBox.success("Editado com sucesso!", {
                                         onClose: function () {
-                                            that.getRouter().navTo("ParticipantesConsulta");
+                                            var idEmpresa = sap.ui.getCore().getModel("global");
+                                            if (idEmpresa == "admin") {
+                                                that.getRouter().navTo("ParticipantesConsulta");
+                                            } else {
+                                                that.getRouter().navTo("HomeParticipante");
+                                            }
+
+
+                                            
                                         }
                                     });
                                 },
@@ -263,9 +271,16 @@ sap.ui.define([
             onCancelar: function () {
                 // Se a rota for a de "ParticipantesEditar", navega para a tela de Consuta
                 // Senão, limpa o model 'Participante'
-                if (this.getRouter().getHashChanger().getHash().search("EditarParticipante") === 0) {
-                    this.getRouter().navTo("HomeParticipante");
-                    //Limpa os campos
+                if (this.getRouter().getHashChanger().getHash().search("EditarParticipante") === 0) {                    
+                    var id = sap.ui.getCore().getModel("global");
+                    if (id == "admin") {
+                        this.getRouter().navTo("ParticipantesConsulta");
+                    } else {
+                        this.getRouter().navTo("HomeParticipante");
+                    }
+                    this.getView().setModel(new JSONModel(), "Empresa");
+
+
                     this.getView().setModel(new JSONModel(), "Participante");
                 } else {
                     //Limpa os campos

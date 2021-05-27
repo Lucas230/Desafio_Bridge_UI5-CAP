@@ -49,7 +49,7 @@ sap.ui.define([
                         MessageBox.error("Não foi possível excluir o Vaga.");
                     }
                 });
-                await this.handleRouteMatched(); // chama a função para recarregar os dados da tabela
+                await this.EmpresaConsultaVaga(); // chama a função para recarregar os dados da tabela
                 this.getView().setBusy(false);
             },
 
@@ -76,7 +76,6 @@ sap.ui.define([
                 var that = this;
                 // Busca todos os Vagas cadastradas (GET)
                 var ID = sap.ui.getCore().getModel("global");
-                console.log(ID);
                 await
                 $.ajax({
                     "url": "/main/VagasSet?$expand=empresa&$filter=empresa/ID eq ("+ID+")",

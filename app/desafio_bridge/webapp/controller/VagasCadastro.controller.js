@@ -15,7 +15,6 @@ sap.ui.define([
                 };
                 this.setModel(new JSONModel(oModelLocal), "Vaga");
 
-                this._getDadosEmpresa();
 
                 // Rota de cadastro
                 this.getRouter().getRoute("VagasCadastro").attachPatternMatched(this.handleRouteMatched, this);
@@ -23,22 +22,7 @@ sap.ui.define([
                 this.getRouter().getRoute("VagasEditar").attachPatternMatched(this.handleRouteMatchedEditarVaga, this);
             },
 
-            _getDadosEmpresa: async function () {
-                var that = this;
-                var ID = this.getRouter().getHashChanger().getHash().split("/")[1];
-                await
-                    $.ajax({
-                        "url": "/main/EmpresasSet",
-                        "method": "GET",
-                        success(data) {
-                            that.getView().setModel(new JSONModel(data.value), "EmpresaList");
-                            // salva o retorno da API (data) em um Model chamado 'Empresa'
-                        },
-                        error() {
-                            MessageBox.error("Não foi possível buscar Empresas.") //Se der erro de API, exibe uma mensagem ao usuário
-                        }
-                    });
-            },
+
 
             // Rota de edição
             handleRouteMatchedEditarVaga: async function () {
@@ -63,6 +47,8 @@ sap.ui.define([
             onConfirmar: async function () {
                 var oVaga = this.getView().getModel("Vaga").getData();
                 var that = this;
+                var idEmpresa = sap.ui.getCore().getModel("global")
+                oVaga.empresa_ID = idEmpresa;
 
                 // Primeiro é validado se a rota que estamos é a rota de 'VagasEditar'
                 // Se for, o botão será responsável por atualizar (PUT) os dados
@@ -85,7 +71,7 @@ sap.ui.define([
                             // Se a api retornar sucesso, exibe uma mensagem para o usuário e navega para a tela de "VagasConsulta"
                             MessageBox.success("Editado com sucesso!", {
                                 onClose: function () {
-                                    that.getRouter().navTo("VagasConsulta");
+                                    that.getRouter().navTo("EmpresaVagasConsulta");
                                 }
                             });
                         },
@@ -125,17 +111,11 @@ sap.ui.define([
             onCancelar: function () {
                 // Se a rota for a de "VagasEditar", navega para a tela de Consuta
                 // Senão, limpa o model 'Vaga'
-                if(sap.ui.getCore().getModel("global")!= undefined){
+                if (this.getRouter().getHashChanger().getHash().search("VagasEditar") === 0) {
                     this.getRouter().navTo("EmpresaVagasConsulta");
                     //Limpa os campos
                     this.getView().setModel(new JSONModel(), "Vaga");
-                }
-                else if (this.getRouter().getHashChanger().getHash().search("VagasEditar") === 0) {
-                    this.getRouter().navTo("VagasConsulta");
-                    //Limpa os campos
-                    this.getView().setModel(new JSONModel(), "Vaga");
-                } 
-                else {
+                }else {
                     //Limpa os campos
                     this.getView().setModel(new JSONModel(), "Vaga");
                 }

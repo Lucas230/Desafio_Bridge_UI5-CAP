@@ -163,7 +163,7 @@
                 { 
                     "name": "VagasEditar",
                     "pattern": "VagasEditar/{ID}",
-                    "target": ["Menu", "VagasCadastro"]
+                    "target": ["MenuEmpresa", "VagasCadastro"]
                 },
                 { 
                     "name": "VagasParticipantes",
@@ -173,7 +173,7 @@
                 { 
                     "name": "VerVaga",
                     "pattern": "VerVaga/{ID}",
-                    "target": ["Menu", "VerVaga"]
+                    "target": ["MenuParticipante", "VerVaga"]
                 },
                 {
                     "name": "EmpresasConsulta",
@@ -183,6 +183,11 @@
                 {
                     "name": "EditarEmpresa",
                     "pattern": "EditarEmpresa/{ID}",
+                    "target": ["MenuEmpresa", "EmpresasCadastro"]
+                },
+                {
+                    "name": "EditarEmpresaAdm",
+                    "pattern": "EditarEmpresaAdm/{ID}",
                     "target": ["Menu", "EmpresasCadastro"]
                 },
                 {
@@ -203,12 +208,12 @@
                 { 
                     "name": "VerParticipante",
                     "pattern": "VerParticipante/{id}",
-                    "target": ["Menu", "VerParticipante"]
+                    "target": ["MenuEmpresa", "VerParticipante"]
                 },
                 { 
                     "name": "EmpresaVagasConsulta",
                     "pattern": "EmpresaVagasConsulta",
-                    "target": ["Menu", "VagasConsulta"]
+                    "target": ["MenuEmpresa", "VagasConsulta"]
                 }
             ],
             "targets": {

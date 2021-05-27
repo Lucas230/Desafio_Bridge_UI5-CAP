@@ -11,7 +11,7 @@ xmlns="sap.m">
                         <content>
                             <Title text="Vagas" level="H2" />
                             <ToolbarSpacer ></ToolbarSpacer>
-                            <SearchField placeholder="Digite o nome de uma Vaga" width="50%" liveChange="onSearch" ></SearchField>
+                            <SearchField placeholder="Digite o nome de um participante" width="50%" liveChange="onSearch" ></SearchField>
                         </content>
                     </OverflowToolbar>
                 </headerToolbar>
