@@ -5,7 +5,7 @@ displayBlock="true"
 xmlns="sap.m">
 	<Page showHeader="true" title="Consulta de Participantes" titleAlignment="Center">
         <content>
-            <Table mode="Delete" id="tableParticipantes" items="{path: 'Participantes>/'}">
+            <Table  id="tableParticipantes" items="{path: 'Participantes>/'}">
                 <headerToolbar>
                     <OverflowToolbar >
                         <content>

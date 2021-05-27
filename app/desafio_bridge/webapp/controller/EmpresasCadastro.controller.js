@@ -21,6 +21,8 @@ sap.ui.define([
                 this.getRouter().getRoute("EmpresasCadastro").attachPatternMatched(this.handleRouteMatched, this);
                 // Rota de edição
                 this.getRouter().getRoute("EditarEmpresa").attachPatternMatched(this.handleRouteMatchedEditarEmpresa, this);
+                //Rota edição adm
+                this.getRouter().getRoute("EditarEmpresaAdm").attachPatternMatched(this.handleRouteMatchedEditarEmpresa, this);
             },
 
             // Rota de edição
@@ -63,13 +65,18 @@ sap.ui.define([
                             "email": oEmpresa.email,
                             "nome": oEmpresa.nome,
                             "senha": oEmpresa.senha
-                            
+
                         }),
                         success() {
                             // Se a api retornar sucesso, exibe uma mensagem para o usuário e navega para a tela de "EmpresasConsulta"
                             MessageBox.success("Editado com sucesso!", {
                                 onClose: function () {
-                                    that.getRouter().navTo("EmpresasConsulta");
+                                    var idEmpresa = sap.ui.getCore().getModel("global");
+                                    if (idEmpresa == "admin") {
+                                        that.getRouter().navTo("EmpresasConsulta");
+                                    } else {
+                                        that.getRouter().navTo("HomeEmpresa");
+                                    }
                                 }
                             });
                         },
@@ -110,8 +117,12 @@ sap.ui.define([
                 // Se a rota for a de "EmpresasEditar", navega para a tela de Consuta
                 // Senão, limpa o model 'Empresa'
                 if (this.getRouter().getHashChanger().getHash().search("EditarEmpresa") === 0) {
-                    this.getRouter().navTo("HomeEmpresa");
-                    //Limpa os campos
+                    var idEmpresa = sap.ui.getCore().getModel("global");
+                    if (idEmpresa == "admin") {
+                        this.getRouter().navTo("EmpresasConsulta");
+                    } else {
+                        this.getRouter().navTo("HomeEmpresa");
+                    }
                     this.getView().setModel(new JSONModel(), "Empresa");
                 } else {
                     //Limpa os campos

@@ -12,8 +12,9 @@
                 <List>
                     <items>
                         <StandardListItem title="Home" type="Active" press="onNavHomeEmpresa"/>
-                        <StandardListItem title="Consulta de Participantes(Empresa)" type="Active" press="onNavParticipantes"/>
+                        <StandardListItem title="Consulta de Participantes" type="Active" press="onNavParticipantes"/>
                         <StandardListItem title="Cadastro de Vagas " type="Active" press="onNavVagasCadastro"/>
+                        <StandardListItem title="Vagas Cadastradas" type="Active" press="onNavVagasCadastradas"/>
                         <StandardListItem title="Sair" type="Active" press="onNavLoginParticipante"/>
                     </items>
                 </List>

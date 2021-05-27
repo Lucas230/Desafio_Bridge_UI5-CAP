@@ -56,19 +56,6 @@
                                 </form:fields>
                             </form:FormElement>
                             
-                            <form:FormElement >
-                                <form:label>
-                                    <Label text="Empresa" design="Bold"></Label>
-                                </form:label>
-                                <form:fields>
-                                    <ComboBox selectedKey="{Vaga>/empresa_ID}"  items="{EmpresaList>/}">
-                                        <items>
-                                            <core:Item key="{EmpresaList>ID}" text="{EmpresaList>nome}" />
-                                        </items>
-                                    </ComboBox>
-                                </form:fields>
-                            </form:FormElement>
-                            
                         </form:formElements>
                     </form:FormContainer>
                 

@@ -35,7 +35,7 @@ sap.ui.define([
             
             // Função do botão 'Excluir'
             onExcluir: async function(oEvent){
-                var id = oEvent.getParameter('listItem').getBindingContext("Instituicoes").getObject().id; // pega o ID da Instituicaos elecionado
+                var id = oEvent.getParameter('listItem').getBindingContext("Instituicoes").getObject().ID; // pega o ID da Instituicaos elecionado
                 this.getView().setBusy(true);
                 // Método DELETE para deletar um registro 
                 await

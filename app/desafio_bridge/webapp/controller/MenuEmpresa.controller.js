@@ -11,7 +11,7 @@ sap.ui.define([
 			onInit: function () {
 
             },
-            onNavLoginParticipante: function(){
+            onNavHomeEmpresa: function(){
                 this.getRouter().navTo("HomeEmpresa");
             },
             onNavVagasCadastro: function(){
@@ -22,6 +22,9 @@ sap.ui.define([
             },
             onNavLoginParticipante: function(){
                 this.getRouter().navTo("LoginParticipante");
+            },
+            onNavVagasCadastradas: function(){
+                this.getRouter().navTo("EmpresaVagasConsulta");
             }
 		});
 	});
