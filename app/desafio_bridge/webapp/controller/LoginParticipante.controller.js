@@ -81,7 +81,7 @@ sap.ui.define([
 
                                     MessageBox.success("Login efetuado com sucesso!", {
                                         onClose: function () {
-                                            that.getRouter().navTo("InstituicoesConsulta");
+                                            that.getRouter().navTo("HomeParticipante");
                                         }
                                     });
                                     return;

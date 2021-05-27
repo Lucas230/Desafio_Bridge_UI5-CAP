@@ -16,7 +16,7 @@ function (BaseController, MessageToast, JSONModel, MessageBox, Filter, FilterOpe
         
         handleRouteMatched: async function () {
             var that = this;
-            var ID = "1d53302c-742b-41ae-b066-2453d35c8aab";
+            var ID = sap.ui.getCore().getModel("global");
             this.getView().setBusy(true);
             await
             $.ajax({
@@ -32,7 +32,7 @@ function (BaseController, MessageToast, JSONModel, MessageBox, Filter, FilterOpe
             this.getView().setBusy(false);
         },
         onNavEditar: function(){
-            var EmpresaId = "1d53302c-742b-41ae-b066-2453d35c8aab";
+            var EmpresaId = sap.ui.getCore().getModel("global");
             this.getRouter().navTo("EditarEmpresa", {ID: EmpresaId});
         }
 

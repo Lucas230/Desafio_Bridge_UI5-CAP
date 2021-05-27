@@ -1,0 +1,22 @@
+<mvc:View 
+    controllerName="desafiobridge.desafiobridge.controller.MenuParticipante"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns:tnt="sap.tnt"
+    xmlns="sap.m">
+
+    <Page showHeader="true" title="Menu Participante" titleAlignment="Center" >
+        <content>
+            <VBox width="100%">
+                <Image src="images/BB_logo.png" width="50%" height="50%" />
+                <List>
+                    <items>
+                        <StandardListItem title="Home" type="Active" press="onNavHomeParticipante"/>
+                        <StandardListItem title="Vagas Disponíveis " type="Active" press="onNavVagasParticipantes"/>
+                        <StandardListItem title="Sair" type="Active" press="onNavLoginParticipante"/>
+                    </items>
+                </List>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>

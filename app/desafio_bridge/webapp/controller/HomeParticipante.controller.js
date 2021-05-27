@@ -16,7 +16,7 @@ function (BaseController, MessageToast, JSONModel, MessageBox, Filter, FilterOpe
         
         handleRouteMatched: async function () {
             var that = this;
-            var ID = "ef0381e0-4967-438d-863f-6ecc74ff2a98";
+            var ID = sap.ui.getCore().getModel("global");
             this.getView().setBusy(true);
             await
             $.ajax({
@@ -32,7 +32,7 @@ function (BaseController, MessageToast, JSONModel, MessageBox, Filter, FilterOpe
             this.getView().setBusy(false);
         },
         onNavEditar: function(){
-            var UserId = "ef0381e0-4967-438d-863f-6ecc74ff2a98";
+            var UserId = sap.ui.getCore().getModel("global");
             this.getRouter().navTo("EditarParticipante", {id: UserId});
         }
 
