@@ -15,6 +15,114 @@
   margin-right: auto!important;
   width: 50%!important;
 }
+.centerButton {
+  margin: 0;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.centerButton2 {
+  margin: 0;
+  position: absolute;
+  top: 78%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.inputLogin1 div{
+    width: 400px!important;
+    border-radius: 10px!important;
+    border: 1px solid #125570!important;
+    margin: 0!important;
+    position: absolute!important;
+    top: 50%!important;
+    left: 50%!important;
+    -ms-transform: translate(-50%, -50%)!important;
+    transform: translate(-50%, -50%)!important;
+}
+.inputLogin1{
+    width: 400px!important;
+    font-size: 18px!important;
+    border-radius: 10px!important;
+    border: 1px solid #125570!important;
+    margin: 0!important;
+    position: absolute!important;
+    top: 48%!important;
+    left: 50%!important;
+    -ms-transform: translate(-50%, -50%)!important;
+    transform: translate(-50%, -50%)!important;
+}
+.inputLogin2 div{
+    width: 400px!important;
+    border-radius: 10px!important;
+    border: 1px solid #125570!important;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.inputLogin2{
+    width: 400px!important;
+    font-size: 18px!important;
+    border-radius: 10px!important;
+    border: 1px solid #125570!important;
+    margin: 0;
+    position: absolute;
+    top: 58%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.logoLogin{
+    width: 170px!important;
+    margin: 0;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.loginNamePart{
+    color:#125570!important;
+    width: 400px!important;
+    font-size: 29px!important;
+    margin: 0!important;
+    position: absolute!important;
+    top: 38%!important;
+    right: 55%!important;
+    left: 45%!important;
+    -ms-transform: translate(-50%, -50%)!important;
+    transform: translate(-50%, -50%)!important;
+}
+.loginNameEmp{
+    color:#125570!important;
+    width: 400px!important;
+    font-size: 29px!important;
+    margin: 0!important;
+    position: absolute!important;
+    top: 38%!important;
+    right: 56%!important;
+    left: 44%!important;
+    -ms-transform: translate(-50%, -50%)!important;
+    transform: translate(-50%, -50%)!important;
+}
+.loginNameAdm{
+    color:#125570!important;
+    width: 400px!important;
+    font-size: 29px!important;
+    margin: 0!important;
+    position: absolute!important;
+    top: 38%!important;
+    right: 58%!important;
+    left: 42%!important;
+    -ms-transform: translate(-50%, -50%)!important;
+    transform: translate(-50%, -50%)!important;
+}
+
 span.sapMBtnInner.sapMBtnEmphasized {
     background-image: none;
     background-color: #125570;

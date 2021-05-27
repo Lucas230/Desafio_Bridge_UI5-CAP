@@ -203,7 +203,12 @@
                 { 
                     "name": "VerParticipante",
                     "pattern": "VerParticipante/{id}",
-                    "target": ["MenuParticipante", "VerParticipante"]
+                    "target": ["Menu", "VerParticipante"]
+                },
+                { 
+                    "name": "EmpresaVagasConsulta",
+                    "pattern": "EmpresaVagasConsulta",
+                    "target": ["Menu", "VagasConsulta"]
                 }
             ],
             "targets": {

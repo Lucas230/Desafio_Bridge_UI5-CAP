@@ -125,11 +125,17 @@ sap.ui.define([
             onCancelar: function () {
                 // Se a rota for a de "VagasEditar", navega para a tela de Consuta
                 // Senão, limpa o model 'Vaga'
-                if (this.getRouter().getHashChanger().getHash().search("VagasEditar") === 0) {
+                if(sap.ui.getCore().getModel("global")!= undefined){
+                    this.getRouter().navTo("EmpresaVagasConsulta");
+                    //Limpa os campos
+                    this.getView().setModel(new JSONModel(), "Vaga");
+                }
+                else if (this.getRouter().getHashChanger().getHash().search("VagasEditar") === 0) {
                     this.getRouter().navTo("VagasConsulta");
                     //Limpa os campos
                     this.getView().setModel(new JSONModel(), "Vaga");
-                } else {
+                } 
+                else {
                     //Limpa os campos
                     this.getView().setModel(new JSONModel(), "Vaga");
                 }
