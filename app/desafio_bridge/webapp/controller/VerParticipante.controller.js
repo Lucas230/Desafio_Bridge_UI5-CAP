@@ -73,7 +73,7 @@ sap.ui.define([
                 this.getView().setBusy(false);
             },
             onVoltar: function () {
-                this.getRouter().navTo("ParticipantesConsulta");
+                this.getRouter().navTo("Participantes");
             }
 		});
 	});
