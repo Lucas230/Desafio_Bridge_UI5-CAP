@@ -1,0 +1,23 @@
+<mvc:View 
+    controllerName="desafiobridge.desafiobridge.controller.MenuEmpresa"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns:tnt="sap.tnt"
+    xmlns="sap.m">
+
+    <Page showHeader="true" title="Menu Empresa" titleAlignment="Center" >
+        <content>
+            <VBox width="100%">
+                <Image src="images/BB_logo.png" width="50%" height="50%" />
+                <List>
+                    <items>
+                        <StandardListItem title="Home" type="Active" press="onNavHomeEmpresa"/>
+                        <StandardListItem title="Consulta de Participantes(Empresa)" type="Active" press="onNavParticipantes"/>
+                        <StandardListItem title="Cadastro de Vagas " type="Active" press="onNavVagasCadastro"/>
+                        <StandardListItem title="Sair" type="Active" press="onNavLoginParticipante"/>
+                    </items>
+                </List>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>

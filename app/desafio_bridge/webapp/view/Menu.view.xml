@@ -10,14 +10,10 @@
                 <Image src="images/BB_logo.png" width="50%" class="center" height="50%" />
                 <List>
                     <items>
-                        <StandardListItem title="Cadastro de Vagas" type="Active" press="onNavVagasCadastro"/>
                         <StandardListItem title="Cadastro de Instituições" type="Active" press="onNavInstituicoesCadastro"/>
                         <StandardListItem title="Consulta de Instituições" type="Active" press="onNavInstituicoesConsulta"/>
-                        <StandardListItem title="Consulta de Vagas" type="Active" press="onNavVagasConsulta"/>
-                        <StandardListItem title="Consulta de Participantes" type="Active" press="onNavParticipantesConsulta"/>                                                
-                        <StandardListItem title="Consulta de Vagas (Participantes)" type="Active" press="onNavVagasParticipantes"/>
+                        <StandardListItem title="Consulta de Participantes" type="Active" press="onNavParticipantesConsulta"/>
                         <StandardListItem title="Consulta de Empresas" type="Active" press="onNavEmpresasConsulta"/>
-                        <StandardListItem title="Consulta de Participantes(Empresa)" type="Active" press="onNavParticipantes"/>
                         <StandardListItem title="Sair" type="Active" press="onNavLoginParticipante"/>
                     </items>
                 </List>

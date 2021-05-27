@@ -79,7 +79,7 @@ sap.ui.define([
                                     sap.ui.getCore().setModel( aLogin.id[x], "global");
                                     MessageBox.success("Login efetuado com sucesso!", {
                                         onClose: function () {
-                                            that.getRouter().navTo("ParticipantesConsulta");
+                                            that.getRouter().navTo("HomeEmpresa");
                                         }
                                     });
                                     return;

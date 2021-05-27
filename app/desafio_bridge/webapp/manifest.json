@@ -123,7 +123,7 @@
                 {
                     "name": "VagasCadastro",
                     "pattern": "VagasCadastro",
-                    "target": [ "Menu", "VagasCadastro"]
+                    "target": [ "MenuEmpresa", "VagasCadastro"]
                 },
                 {
                     "name": "ParticipanteCadastro",
@@ -168,7 +168,7 @@
                 { 
                     "name": "VagasParticipantes",
                     "pattern": "VagasParticipantes",
-                    "target": ["Menu", "VagasParticipantes"]
+                    "target": ["MenuParticipante", "VagasParticipantes"]
                 },
                 { 
                     "name": "VerVaga",
@@ -188,22 +188,22 @@
                 {
                     "name": "HomeEmpresa",
                     "pattern": "HomeEmpresa",
-                    "target": ["Menu", "HomeEmpresa"]
+                    "target": ["MenuEmpresa", "HomeEmpresa"]
                 },
                 {
                     "name": "HomeParticipante",
                     "pattern": "HomeParticipante",
-                    "target": ["Menu", "HomeParticipante"]
+                    "target": ["MenuParticipante", "HomeParticipante"]
                 },
                 { 
                     "name": "Participantes",
                     "pattern": "Participantes",
-                    "target": ["Menu", "Participantes"]
+                    "target": ["MenuEmpresa", "Participantes"]
                 },
                 { 
                     "name": "VerParticipante",
                     "pattern": "VerParticipante/{id}",
-                    "target": ["Menu", "VerParticipante"]
+                    "target": ["MenuParticipante", "VerParticipante"]
                 }
             ],
             "targets": {
@@ -221,6 +221,22 @@
 					"clearControlAggregation": false,
 					"viewId": "menulogin",
                     "viewName": "MenuLogin",
+                    "controlAggregation": "masterPages"
+                },
+                "MenuParticipante": { 
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"viewId": "menuparticipante",
+                    "viewName": "MenuParticipante",
+                    "controlAggregation": "masterPages"
+                },
+                "MenuEmpresa": { 
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"viewId": "menuempresa",
+                    "viewName": "MenuEmpresa",
                     "controlAggregation": "masterPages"
                 },
                 "TargetView": {
