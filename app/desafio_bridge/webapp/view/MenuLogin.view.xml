@@ -18,21 +18,5 @@
                 </List>
             </VBox>
         </content>
-        <!--<tnt:NavigationList
-		id="navigationList"
-		width="320px">
-
-		<tnt:NavigationListItem text="Login" key="rootItem1">
-			<tnt:NavigationListItem text="Login de Participantes" type="Active" press="onNavLoginParticipante" />
-			<tnt:NavigationListItem text="Login de Empresas" type="Active" press="onNavLoginEmpresa" />
-			<tnt:NavigationListItem text="Login Administrador" type="Active" press="onNavLoginAdm" />
-		</tnt:NavigationListItem>
-
-		<tnt:NavigationListItem text="Cadastrar">
-			<tnt:NavigationListItem text="Cadastro de Participante" type="Active" press="onNavParticipanteCadastro" />
-			<tnt:NavigationListItem text="Cadastro de Empresa" type="Active" press="onNavEmpresasCadastro" />
-		</tnt:NavigationListItem>
-
-	</tnt:NavigationList>-->
     </Page>
 </mvc:View>
