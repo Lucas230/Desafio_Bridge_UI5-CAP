@@ -1,17 +1,21 @@
 sap.ui.define([
     "./BaseController",
-    "sap/ui/core/mvc/Controller",
+    "sap/ui/model/json/JSONModel",
     "sap/m/MessageBox"
 ],
 	/**
 	 * @param {typeof sap.ui.core.mvc.Controller} Controller
 	 */
-	function (BaseController, Controller, MessageBox) {
+	function (BaseController, JSONModel, MessageBox) {
 		"use strict";
 
 		return BaseController.extend("desafiobridge.desafiobridge.controller.LoginEmpresa", {
 			onInit: function () {
-
+                var oModelLocal = {
+                    email: "",
+                    senha: ""
+                };
+                this.setModel(new JSONModel(oModelLocal), "Empresas"); 
             },
             
             _getLogin: async function (handleFunction) {
@@ -79,6 +83,7 @@ sap.ui.define([
                                     sap.ui.getCore().setModel( aLogin.id[x], "global");
                                     MessageBox.success("Login efetuado com sucesso!", {
                                         onClose: function () {
+                                            that.getView().setModel(new JSONModel(), "Empresas");
                                             that.getRouter().navTo("HomeEmpresa");
                                         }
                                     });

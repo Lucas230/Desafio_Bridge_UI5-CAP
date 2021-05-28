@@ -8,7 +8,7 @@
     <Page showHeader="true" title="Menu Participante" titleAlignment="Center" >
         <content>
             <VBox width="100%">
-                <Image src="images/BB_logo.png" width="50%" height="50%" />
+                <Image src="images/BB_logo.png" class="center" width="50%" height="50%" />
                 <List>
                     <items>
                         <StandardListItem title="Home" type="Active" press="onNavHomeParticipante"/>

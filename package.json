@@ -25,7 +25,7 @@
     },
     "requires": {
       "db": {
-        "kind": "sql",
+        "kind": "hana",
         "model": "*",
         "credentials": {
           "database": "my.db"
