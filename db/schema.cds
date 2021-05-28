@@ -16,8 +16,8 @@ entity Instituicoes : cuid {
 }
 
 entity Vagas : cuid {
-    descricao          : String(100);
-    requisitos         : String(100);
+    descricao          : String(250);
+    requisitos         : String(250);
     nivel_conhecimento : String(50);
     empresa            : Association to Empresas;
 }

@@ -22,7 +22,7 @@
                             </form:FormElement>
                             <form:FormElement >
                                 <form:fields>
-                                    <Input id="email" class="inputLogin1" placeholder="E-mail"></Input>
+                                    <Input id="email" value="{Empresas>/email}" class="inputLogin1" placeholder="E-mail"></Input>
                                 </form:fields>
                             </form:FormElement>
 
@@ -34,7 +34,7 @@
 
                             <form:FormElement >
                                 <form:fields>
-                                    <Input id="senha" class="inputLogin2" type="Password" placeholder="Senha"></Input>
+                                    <Input id="senha" value="{Empresas>/senha}" class="inputLogin2" type="Password" placeholder="Senha"></Input>
                                 </form:fields>
                             </form:FormElement>   
                             

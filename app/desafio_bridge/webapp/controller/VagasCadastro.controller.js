@@ -86,19 +86,21 @@ sap.ui.define([
                 else {
                     this.getView().setBusy(true);
                     // Método POST para salvar os dados 
-
+                    console.log(oVaga.empresa_ID)
                     await $.ajax("/main/VagasSet", {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json"
                         },
-                        data: JSON.stringify(oVaga),
+                        data: JSON.stringify({
+                            "descricao": oVaga.descricao,
+                            "requisitos": oVaga.requisitos,
+                            "nivel_conhecimento": oVaga.nivel_conhecimento,
+                            "empresa_ID": oVaga.empresa_ID
+                        }),
                         success() {
-                            MessageBox.success("Salvo com sucesso!");
-                        },
-                        error(data) {
-                            MessageBox.error("Não foi possível salvar a vaga!");
-                        }
+                            MessageBox.success("Vaga salva com sucesso!");
+                        }   
                     });
                     this.getView().setBusy(false);
 

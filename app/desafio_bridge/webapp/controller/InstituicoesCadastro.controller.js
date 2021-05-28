@@ -115,7 +115,7 @@ sap.ui.define([
                 if(this.getRouter().getHashChanger().getHash().search("EditarInstituicoes") === 0){
                     this.getRouter().navTo("InstituicoesConsulta");
                     //Limpa os campos
-                this.getView().setModel(new JSONModel(), "Instituicao");
+                    this.getView().setModel(new JSONModel(), "Instituicao");
                 }else{
                     //Limpa os campos
                     this.getView().setModel(new JSONModel(), "Instituicao");    
