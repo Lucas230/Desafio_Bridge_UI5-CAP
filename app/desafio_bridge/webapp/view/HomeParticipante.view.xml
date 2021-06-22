@@ -71,7 +71,7 @@
                             <form:FormElement>
                                 <form:fields>
                                     <Link
-                                    text="FreeCodeCamp - Faça seu prejeto e ganhe certificados"
+                                    text="FreeCodeCamp - Faça seu projeto e ganhe certificados"
                                     target="_blank"
                                     class="fontLink"
                                     href="https://www.freecodecamp.org/" />

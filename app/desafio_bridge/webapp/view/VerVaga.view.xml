@@ -6,7 +6,7 @@
     xmlns="sap.m"
 > 
 
-	<Page showHeader="true" title="Consulta da vaga" titleAlignment="Center">
+	<Page showHeader="true" title="Entre em contato se você atender ao perfil" titleAlignment="Center">
         <content>
             <form:Form>
                 <form:layout>
@@ -26,7 +26,7 @@
                         <form:formElements>
                             <form:FormElement>
                                 <form:fields>
-                                    <TextArea class="vervagatext" value="Email: {Vaga>/empresa/email}" editable="false"/>
+                                    <TextArea class="vervagatext" value="Contato: {Vaga>/empresa/email}" editable="false"/>
                                 </form:fields>
                             </form:FormElement>
                         </form:formElements>

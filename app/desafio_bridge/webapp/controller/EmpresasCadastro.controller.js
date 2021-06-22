@@ -99,7 +99,11 @@ sap.ui.define([
                         },
                         data: JSON.stringify(oEmpresa),
                         success() {
-                            MessageBox.success("Salvo com sucesso!");
+                            MessageBox.success("Salvo com sucesso!", {
+                                onClose: function () {
+                                    that.getRouter().navTo("LoginEmpresa");
+                                }
+                            });
                         },
                         error() {
                             MessageBox.error("Não foi possível salvar a Empresa!");
